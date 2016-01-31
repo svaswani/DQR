@@ -8,7 +8,7 @@
 
 import Foundation
 
-let server = ""
+let server = "129.21.104.129"
 let port = 4000
 
 var inputStream: NSInputStream?
@@ -23,6 +23,9 @@ class NetHelper : NSObject, NSStreamDelegate {
         
         NSStream.getStreamsToHostWithName(server, port: port, inputStream: &inputStream, outputStream: &outputStream)
         inputStream!.delegate = self
+        
+        inputStream?.open()
+        outputStream?.open()
     }
     
     class func getHelper() -> NetHelper {

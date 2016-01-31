@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1801DC091C5DCEB50073D244 /* ServerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1801DC081C5DCEB50073D244 /* ServerViewController.swift */; };
 		184276141C5DA4D7002902C5 /* NetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184276131C5DA4D7002902C5 /* NetHelper.swift */; };
 		188DC6831C5B119A00C6A6FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188DC6821C5B119A00C6A6FF /* AppDelegate.swift */; };
 		188DC6851C5B119A00C6A6FF /* CameraQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188DC6841C5B119A00C6A6FF /* CameraQRViewController.swift */; };
@@ -26,6 +27,7 @@
 		2221746C1C5DC3AC008014D1 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2221746B1C5DC3AC008014D1 /* NotificationController.swift */; };
 		2221746E1C5DC3AC008014D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2221746D1C5DC3AC008014D1 /* Assets.xcassets */; };
 		222174721C5DC3AC008014D1 /* DQRWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 222174541C5DC3AC008014D1 /* DQRWatch.app */; };
+		224E98A61C5DD36A00F05800 /* QRDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224E98A51C5DD36A00F05800 /* QRDisplayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1801DC081C5DCEB50073D244 /* ServerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerViewController.swift; sourceTree = "<group>"; };
 		184276131C5DA4D7002902C5 /* NetHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetHelper.swift; sourceTree = "<group>"; };
 		188DC67F1C5B119A00C6A6FF /* DQR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DQR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		188DC6821C5B119A00C6A6FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +116,7 @@
 		2221746B1C5DC3AC008014D1 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		2221746D1C5DC3AC008014D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2221746F1C5DC3AC008014D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		224E98A51C5DD36A00F05800 /* QRDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRDisplayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,11 +183,13 @@
 				188DC6821C5B119A00C6A6FF /* AppDelegate.swift */,
 				188DC6841C5B119A00C6A6FF /* CameraQRViewController.swift */,
 				188DC6861C5B119A00C6A6FF /* Main.storyboard */,
+				224E98A51C5DD36A00F05800 /* QRDisplayViewController.swift */,
 				188DC6891C5B119A00C6A6FF /* Assets.xcassets */,
 				188DC68B1C5B119A00C6A6FF /* LaunchScreen.storyboard */,
 				188DC68E1C5B119A00C6A6FF /* Info.plist */,
 				188DC6B01C5D99BB00C6A6FF /* PlayersTableViewController.swift */,
 				188DC6B21C5D9BEF00C6A6FF /* PlayerItem.swift */,
+				1801DC081C5DCEB50073D244 /* ServerViewController.swift */,
 			);
 			path = DQR;
 			sourceTree = "<group>";
@@ -432,10 +438,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				224E98A61C5DD36A00F05800 /* QRDisplayViewController.swift in Sources */,
 				188DC6851C5B119A00C6A6FF /* CameraQRViewController.swift in Sources */,
 				188DC6831C5B119A00C6A6FF /* AppDelegate.swift in Sources */,
 				188DC6B11C5D99BB00C6A6FF /* PlayersTableViewController.swift in Sources */,
 				188DC6B91C5DA0E000C6A6FF /* LoginViewController.swift in Sources */,
+				1801DC091C5DCEB50073D244 /* ServerViewController.swift in Sources */,
 				188DC6B31C5D9BEF00C6A6FF /* PlayerItem.swift in Sources */,
 				184276141C5DA4D7002902C5 /* NetHelper.swift in Sources */,
 			);
