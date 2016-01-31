@@ -15,7 +15,7 @@ public class Console {
     /**
      * Switch to enable or disable debug messages.
      */
-    private static boolean debugEnabled = true;
+    private static boolean debugEnabled = false;
 
     /**
      * If true, error messages will still display regardless of whether the

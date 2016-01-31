@@ -134,7 +134,7 @@ public final class Model {
             }
 
             mTarget = target;
-            Console.log_info("Player " + mName + " has target " + mTarget.mName + ".");
+            Console.log_info("Player " + mName + " assigned target " + mTarget.mName + ".");
             return true;
         }
 
@@ -254,12 +254,32 @@ public final class Model {
      */
     public synchronized String getTarget(String name) {
 
+        //If the player doesn't exist, log and return.
         if(!mPlayers.containsKey(name)) {
             Console.log_error("Player " + name + " does not exist.");
             return null;
         }
 
         return mPlayers.get(name).getTarget().getName();
+    }
+
+    /**
+     * Returns a comma-separated string of all players.
+     * @return A list of all the players in the game.
+     */
+    public synchronized String getPlayerNames() {
+
+        String players = "";
+
+        //Use an iterator to fetch entries, but a for loop to count to size()-1
+        Iterator<Map.Entry<String, Player>> iterator = mPlayers.entrySet().iterator();
+        for(int i = 0; i < mPlayers.size()-1; i++) {
+            players += (iterator.next().getValue().getName() + ",");
+        }
+        //This ensures we don't land on a comma.
+        players += iterator.next().getValue().getName();
+
+        return players;
     }
 
     /**
@@ -272,6 +292,8 @@ public final class Model {
             Console.log_warning("There must be more than 2 players to generate a matchup.");
             return;
         }
+
+        Console.log_info("Begin assigning targets.");
 
         //Create a list of the players and shuffle them to assign targets.
         List<Player> shuffleList = new ArrayList<>();
