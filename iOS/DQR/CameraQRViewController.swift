@@ -58,7 +58,7 @@ class CameraQRViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
         qrCodeFrameView?.layer.borderColor = UIColor.greenColor().CGColor
         qrCodeFrameView?.layer.borderWidth = 2
         view.addSubview(qrCodeFrameView!)
-        view.bringSubviewToFront(qrCodeFrameView!)
+        //view.bringSubviewToFront(qrCodeFrameView!)
     }
 
     override func didReceiveMemoryWarning() {
