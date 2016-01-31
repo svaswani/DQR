@@ -11,19 +11,32 @@ import Foundation
 let server = "129.21.104.129"
 let port = 4000
 
-var inputStream: NSInputStream?
-var outputStream: NSOutputStream?
-
 var singleton: NetHelper?
 
 class NetHelper : NSObject, NSStreamDelegate {
+    
+var inputStream: NSInputStream?
+var outputStream: NSOutputStream?
     
     override init() {
         super.init()
         
         NSStream.getStreamsToHostWithName(server, port: port, inputStream: &inputStream, outputStream: &outputStream)
         
+        inputStream?.open()
         outputStream?.open()
+        
+        let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+        dispatch_async(queue) {
+            let bufferSize = 1024
+            var inputBuffer = Array<UInt8>(count: bufferSize, repeatedValue: 0)
+            while true {
+                /* Uncomment to get byte count ** let bytesRead = */self.inputStream!.read(&inputBuffer, maxLength: bufferSize)
+                
+                let responseString = NSString(bytes: inputBuffer, length: inputBuffer.count, encoding: NSUTF8StringEncoding) as! String
+                print("Read data from stream: \(responseString)")
+            }
+        }
     }
     
     class func getNetHelper() -> NetHelper {
