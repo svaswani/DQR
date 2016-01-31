@@ -22,9 +22,9 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jrb-iU-jD1">
                                 <rect key="frame" x="30" y="30" width="540" height="520"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CsD-oa-BsP">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="CsD-oa-BsP">
                                         <rect key="frame" x="105" y="0.0" width="330" height="330"/>
-                                        <color key="backgroundColor" red="0.0096328050156440463" green="0.24696919137396503" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.0096328050156440463" green="0.24696919137396503" blue="0.25098039215686274" alpha="0.0" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" priority="250" constant="200" id="JR6-W6-rTa"/>
                                             <constraint firstAttribute="width" secondItem="CsD-oa-BsP" secondAttribute="height" multiplier="1:1" id="p8y-TB-Ld3"/>
@@ -35,7 +35,7 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Please enter your name to join:" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wZr-8y-JLA">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Please enter your name to join:" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZr-8y-JLA">
                                         <rect key="frame" x="10" y="350" width="520" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="oaX-5y-ox1"/>
@@ -78,6 +78,7 @@
                                     <constraint firstItem="0AG-SY-IrD" firstAttribute="trailing" secondItem="jrb-iU-jD1" secondAttribute="trailingMargin" constant="100" id="GuB-Gh-B42"/>
                                     <constraint firstAttribute="trailing" secondItem="wZr-8y-JLA" secondAttribute="trailing" constant="10" id="MuO-jF-jXa"/>
                                     <constraint firstItem="wZr-8y-JLA" firstAttribute="leading" secondItem="jrb-iU-jD1" secondAttribute="leading" constant="10" id="O7h-vx-XBe"/>
+                                    <constraint firstItem="0AG-SY-IrD" firstAttribute="top" secondItem="wZr-8y-JLA" secondAttribute="bottom" constant="20" id="fDl-pl-0bD"/>
                                     <constraint firstItem="CsD-oa-BsP" firstAttribute="top" secondItem="jrb-iU-jD1" secondAttribute="top" id="fQU-d4-slr"/>
                                     <constraint firstItem="0AG-SY-IrD" firstAttribute="leading" secondItem="jrb-iU-jD1" secondAttribute="leading" constant="50" id="nDz-mV-erf"/>
                                     <constraint firstItem="CsD-oa-BsP" firstAttribute="leading" secondItem="jrb-iU-jD1" secondAttribute="leading" priority="250" constant="50" id="skP-sA-J0w"/>
@@ -122,7 +123,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gfu-fJ-rTU" id="hGk-fg-iov">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -294,5 +295,6 @@
     </scenes>
     <resources>
         <image name="Image" width="3000" height="3000"/>
+        <image name="Logo" width="2048" height="2048"/>
     </resources>
 </document>

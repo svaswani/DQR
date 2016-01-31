@@ -13,6 +13,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var name: UITextField!
     
     @IBOutlet weak var userNameInput: UITextField!
+    
     // join button code
     @IBAction func didClickJoin(sender: AnyObject) {
         if (!userNameInput.text!.isEmpty)
