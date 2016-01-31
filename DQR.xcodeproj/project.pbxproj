@@ -14,6 +14,9 @@
 		188DC68D1C5B119A00C6A6FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188DC68B1C5B119A00C6A6FF /* LaunchScreen.storyboard */; };
 		188DC6981C5B119A00C6A6FF /* DQRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188DC6971C5B119A00C6A6FF /* DQRTests.swift */; };
 		188DC6A31C5B119A00C6A6FF /* DQRUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188DC6A21C5B119A00C6A6FF /* DQRUITests.swift */; };
+		188DC6B11C5D99BB00C6A6FF /* PlayersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188DC6B01C5D99BB00C6A6FF /* PlayersTableViewController.swift */; };
+		188DC6B31C5D9BEF00C6A6FF /* PlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188DC6B21C5D9BEF00C6A6FF /* PlayerItem.swift */; };
+		188DC6B91C5DA0E000C6A6FF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188DC6B81C5DA0E000C6A6FF /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		188DC69E1C5B119A00C6A6FF /* DQRUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DQRUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		188DC6A21C5B119A00C6A6FF /* DQRUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DQRUITests.swift; sourceTree = "<group>"; };
 		188DC6A41C5B119A00C6A6FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		188DC6B01C5D99BB00C6A6FF /* PlayersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersTableViewController.swift; sourceTree = "<group>"; };
+		188DC6B21C5D9BEF00C6A6FF /* PlayerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerItem.swift; sourceTree = "<group>"; };
+		188DC6B81C5DA0E000C6A6FF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +103,15 @@
 		188DC6811C5B119A00C6A6FF /* DQR */ = {
 			isa = PBXGroup;
 			children = (
+				188DC6B81C5DA0E000C6A6FF /* LoginViewController.swift */,
 				188DC6821C5B119A00C6A6FF /* AppDelegate.swift */,
 				188DC6841C5B119A00C6A6FF /* ViewController.swift */,
 				188DC6861C5B119A00C6A6FF /* Main.storyboard */,
 				188DC6891C5B119A00C6A6FF /* Assets.xcassets */,
 				188DC68B1C5B119A00C6A6FF /* LaunchScreen.storyboard */,
 				188DC68E1C5B119A00C6A6FF /* Info.plist */,
+				188DC6B01C5D99BB00C6A6FF /* PlayersTableViewController.swift */,
+				188DC6B21C5D9BEF00C6A6FF /* PlayerItem.swift */,
 			);
 			path = DQR;
 			sourceTree = "<group>";
@@ -258,6 +267,9 @@
 			files = (
 				188DC6851C5B119A00C6A6FF /* ViewController.swift in Sources */,
 				188DC6831C5B119A00C6A6FF /* AppDelegate.swift in Sources */,
+				188DC6B11C5D99BB00C6A6FF /* PlayersTableViewController.swift in Sources */,
+				188DC6B91C5DA0E000C6A6FF /* LoginViewController.swift in Sources */,
+				188DC6B31C5D9BEF00C6A6FF /* PlayerItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
