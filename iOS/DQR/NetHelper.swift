@@ -8,7 +8,7 @@
 
 import Foundation
 
-let server = ""
+let server = "129.21.104.129"
 let port = 4000
 
 var inputStream: NSInputStream?

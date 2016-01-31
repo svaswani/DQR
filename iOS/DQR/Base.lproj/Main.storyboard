@@ -171,10 +171,10 @@
             </objects>
             <point key="canvasLocation" x="2391" y="41"/>
         </scene>
-        <!--View Controller-->
+        <!--Server View Controller-->
         <scene sceneID="8rh-iM-xZj">
             <objects>
-                <viewController id="RKZ-eK-xkX" sceneMemberID="viewController">
+                <viewController id="RKZ-eK-xkX" customClass="ServerViewController" customModule="DQR" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wGY-db-uA0"/>
                         <viewControllerLayoutGuide type="bottom" id="V19-2P-lyj"/>
@@ -191,6 +191,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pSD-zA-1DN">
                                 <rect key="frame" x="277" y="251" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonTop:" destination="RKZ-eK-xkX" eventType="touchUpInside" id="t4F-sH-73B"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yme-AU-Kp6">
                                 <rect key="frame" x="277" y="325" width="46" height="30"/>
@@ -199,6 +202,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="buttonTop" destination="pSD-zA-1DN" id="WdK-iO-J3Z"/>
+                        <outlet property="textField" destination="Kwk-cg-7QW" id="cfO-df-MSN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ffr-fg-cNT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
