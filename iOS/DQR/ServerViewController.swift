@@ -10,7 +10,7 @@ import UIKit
 
 class ServerViewController : UIViewController {
     
-    let net: NetHelper = NetHelper()
+    let net: NetHelper = NetHelper.getNetHelper()
     
     @IBAction func buttonTop(sender: AnyObject) {
         
