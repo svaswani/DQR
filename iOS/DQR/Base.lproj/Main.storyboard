@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -191,8 +191,22 @@
                     <view key="view" contentMode="scaleToFill" id="RrP-m5-m92">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="puB-Tm-Gfu">
+                                <rect key="frame" x="200" y="170" width="200" height="200"/>
+                                <color key="backgroundColor" red="0.73656331806282727" green="0.23711236721243817" blue="0.27641985571515115" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.73656331809999998" green="0.23711236720000001" blue="0.27641985569999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="JAA-qi-eNN"/>
+                                    <constraint firstAttribute="height" constant="200" id="vUT-Pd-qS6"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="puB-Tm-Gfu" firstAttribute="top" secondItem="mgb-2e-Gxo" secondAttribute="bottom" constant="150" id="8YJ-yL-fAW"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="paf-dQ-ERu" appends="YES" id="Qbu-hW-HCH"/>
                         </connections>
@@ -205,7 +219,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2543" y="695"/>
+            <point key="canvasLocation" x="2521" y="774"/>
         </scene>
         <!--Server View Controller-->
         <scene sceneID="8rh-iM-xZj">

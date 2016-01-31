@@ -8,14 +8,16 @@
 
 import UIKit
 
-class PlayerItem: NSObject {
+class PlayerItem: NSObject, NSCoding {
     
     let name: String
-    var qrImage: UIImage
+    let qrImage: UIImage
+    var scanned: Bool
     
     init(name: String) {
         self.name = name
         self.qrImage = PlayerItem.generateQR(name)
+        self.scanned = false
     }
     
     // Generates a QR code from a string and returns a UIImage.
@@ -33,5 +35,21 @@ class PlayerItem: NSObject {
         
         // Return the generated QR image.
         return UIImage(CIImage: (filter?.outputImage)!)
+    }
+    
+    let nameKey = "name"
+    let qrImageKey = "qrImage"
+    let scannedKey = "scanned"
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(name, forKey: nameKey)
+        aCoder.encodeObject(qrImage, forKey: qrImageKey)
+        aCoder.encodeObject(scanned, forKey: scannedKey)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        name = aDecoder.decodeObjectForKey(nameKey) as! String
+        qrImage = aDecoder.decodeObjectForKey(qrImageKey) as! UIImage
+        scanned = aDecoder.decodeObjectForKey(scannedKey) as! Bool
     }
 }
