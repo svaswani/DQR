@@ -122,7 +122,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gfu-fJ-rTU" id="hGk-fg-iov">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -194,20 +194,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="puB-Tm-Gfu">
-                                <rect key="frame" x="200" y="170" width="200" height="200"/>
-                                <color key="backgroundColor" red="0.73656331806282727" green="0.23711236721243817" blue="0.27641985571515115" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="0.73656331809999998" green="0.23711236720000001" blue="0.27641985569999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="puB-Tm-Gfu">
+                                <rect key="frame" x="50" y="50" width="500" height="500"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" secondItem="puB-Tm-Gfu" secondAttribute="height" multiplier="1:1" id="Hvr-2P-9IY"/>
                                     <constraint firstAttribute="width" constant="200" id="JAA-qi-eNN"/>
                                     <constraint firstAttribute="height" constant="200" id="vUT-Pd-qS6"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="JAA-qi-eNN"/>
+                                        <exclude reference="vUT-Pd-qS6"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="puB-Tm-Gfu" firstAttribute="top" secondItem="mgb-2e-Gxo" secondAttribute="bottom" constant="150" id="8YJ-yL-fAW"/>
+                            <constraint firstItem="puB-Tm-Gfu" firstAttribute="leading" secondItem="RrP-m5-m92" secondAttribute="leadingMargin" constant="30" id="TUK-c9-uqr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="puB-Tm-Gfu" secondAttribute="trailing" constant="30" id="dVl-h3-6oj"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="paf-dQ-ERu" appends="YES" id="Qbu-hW-HCH"/>
@@ -285,4 +292,7 @@
             <point key="canvasLocation" x="942" y="41"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Image" width="3000" height="3000"/>
+    </resources>
 </document>

@@ -8,11 +8,9 @@
         <!--QRShowController-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller identifier="QRShowController" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="DQRWatch" customModuleProvider="target">
+                <controller identifier="QRShowController" id="AgC-eL-Hgc" customClass="QRShowController" customModule="DQRWatch_Extension">
                     <items>
-                        <imageView width="1" height="1" alignment="left" id="qLm-va-U3z">
-                            <color key="tintColor" red="0.73656331809999998" green="0.23711236720000001" blue="0.27641985569999999" alpha="1" colorSpace="calibratedRGB"/>
-                        </imageView>
+                        <imageView width="1" height="1" alignment="left" id="qLm-va-U3z"/>
                     </items>
                 </controller>
             </objects>

@@ -11,6 +11,7 @@ import UIKit
 class PlayerManager {
     
     var playerList = [PlayerItem]()
+    var thisPlayer:PlayerItem? = nil
     
     func archivePath() -> String? {
         let directoryList = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) //find the one path you can store to/ pull from
