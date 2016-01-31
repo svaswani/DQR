@@ -67,7 +67,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="p1t-HD-Upj" kind="show" id="2M9-uG-ddi"/>
+                                            <action selector="didClickJoin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KrO-2y-HAw"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -101,11 +101,13 @@
                     <connections>
                         <outlet property="coolView" destination="8bC-Xf-vdC" id="Ds2-u6-qli"/>
                         <outlet property="name" destination="0AG-SY-IrD" id="sGw-jl-v7V"/>
+                        <outlet property="userNameInput" destination="0AG-SY-IrD" id="v7T-BO-Roa"/>
+                        <segue destination="p1t-HD-Upj" kind="show" identifier="goToPlayers" id="T87-Te-c9D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="208" y="41"/>
+            <point key="canvasLocation" x="272" y="44"/>
         </scene>
         <!--Players-->
         <scene sceneID="GcO-PO-YRn">
