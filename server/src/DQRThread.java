@@ -10,6 +10,7 @@ public class DQRThread extends Thread {
 
     private Socket mClient;
     private String mClientName;
+    private String mPlayerName;
     private InputStream mInputStream;
     private OutputStream mOutputStream;
     private BufferedReader mBufferedReader;
@@ -69,6 +70,7 @@ public class DQRThread extends Thread {
     public static final String COMMAND_GET_SCORE = "s";
     public static final String COMMAND_GET_TARGET = "t";
     public static final String COMMAND_LIST_PLAYERS = "l";
+    public static final String COMMAND_ATTACK = "n";
 
     /**
      * Parses a command received from the input stream of the client and
@@ -103,6 +105,8 @@ public class DQRThread extends Thread {
         switch(command) {
             case COMMAND_ADD_PLAYER:
 
+                Console.log_info("Received \"Add Player\" command from client \"" + mClientName + "\".");
+
                 //Check that the argument is not null.
                 if(argument == null || argument.equals("")) {
                     Console.log_warning("Argument for add command cannot be null.");
@@ -110,10 +114,18 @@ public class DQRThread extends Thread {
                 }
 
                 //Add a new player to the model.
-                Model.getModel().addPlayer(Model.Player.makePlayer(argument));
+                if(Model.getModel().addPlayer(argument) && (mPlayerName == null || mPlayerName.equals(""))) {
+                    mPlayerName = argument;
+                    Console.log_info("Successfully added player \"" + mPlayerName + "\" from client \"" + mClientName + "\".");
+
+                } else if(mPlayerName != null && !mPlayerName.equals("")) {
+                    Console.log_warning("Client " + mClientName + " is already linked to player " + mPlayerName);
+                }
                 break;
 
             case COMMAND_GET_SCORE:
+
+                Console.log_info("Received \"Get Score\" command from client \"" + mClientName + "\".");
 
                 //Check that the argument is not null.
                 if(argument == null || argument.equals("")) {
@@ -142,6 +154,8 @@ public class DQRThread extends Thread {
 
             case COMMAND_GET_TARGET:
 
+                Console.log_info("Received \"Get Target\" command from client \"" + mClientName + "\".");
+
                 //Check that the argument is not null.
                 if(argument == null || argument.equals("")) {
                     Console.log_warning("Argument for get target command cannot be null.");
@@ -167,9 +181,18 @@ public class DQRThread extends Thread {
                 }
 
             case COMMAND_LIST_PLAYERS:
-                Console.log_error("List command not implemented yet.");
+                Console.log_warning("List command not implemented yet.");
+                break;
+
+            case COMMAND_ATTACK:
+
+                Console.log_info("Received \"Player Attacked\" command from client \"" + mClientName + "\"");
+
+
+
                 break;
             default:
+                Console.log_warning("Command \"" + command + "\" received from client \"" + mClientName + "\" unrecognized.");
         }
     }
 }

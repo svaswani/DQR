@@ -63,7 +63,7 @@ public final class Model {
          * @param name The name of the player.
          * @param initialScore The starting score of the player.
          */
-        public static Player makePlayer(String name, int initialScore) {
+        private static Player makePlayer(String name, int initialScore) {
 
             //Null safety check the name of the player.
             if(name == null || name.equals("")) {
@@ -168,10 +168,12 @@ public final class Model {
 
     /**
      * Adds a new player to the model. Fails if the player already exists in the model.
-     * @param player The player to add.
+     * @param playerName The name of the player to add.
      * @return True if the player was successfully added, false otherwise.
      */
-    public synchronized boolean addPlayer(Player player) {
+    public synchronized boolean addPlayer(String playerName) {
+
+        Player player = Player.makePlayer(playerName);
 
         //If the model already contains this player, refuse it.
         if(mPlayers.containsValue(player)) {
@@ -264,10 +266,27 @@ public final class Model {
     }
 
     /**
+     * Returns a string array of player names.
+     * @return A string array of player names.
+     */
+    public synchronized String[] getPlayerNames() {
+
+        String[] players = new String[mPlayers.size()];
+
+        //Use an iterator to fetch values from the map's entry set.
+        Iterator<Map.Entry<String, Player>> iterator = mPlayers.entrySet().iterator();
+        for(int i = 0; i < players.length; i++) {
+            players[i] = iterator.next().getValue().getName();
+        }
+
+        return players;
+    }
+
+    /**
      * Returns a comma-separated string of all players.
      * @return A list of all the players in the game.
      */
-    public synchronized String getPlayerNames() {
+    public synchronized String getFormattedPlayerNames() {
 
         String players = "";
 

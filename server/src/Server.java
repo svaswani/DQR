@@ -1,6 +1,8 @@
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by Nick Mosher on 1/30/16.
@@ -10,16 +12,13 @@ import java.net.Socket;
  */
 public class Server {
 
-    /**
-     * Reference to the listening server socket.
-     */
-    private static ServerSocket serverSocket;
+    private static Set<DQRThread> clientThreads = new HashSet<>();
 
     public static void main(String[] args) {
 
         try {
             //Listen on port 4000
-            serverSocket = new ServerSocket(4000);
+            ServerSocket serverSocket = new ServerSocket(4000);
 
             //Continuously accept new incoming client requests and spin up new DQRThreads to handle them.
             Socket incomingClient;
@@ -30,7 +29,11 @@ public class Server {
                         incomingClient.getInetAddress().getHostName() :
                         incomingClient.getInetAddress().getHostAddress();
                 Console.log_info("Client " + displayName + " connected! Starting DQR Thread...");
-                new DQRThread(incomingClient, displayName).start();
+
+                //Construct, launch, and store a new DQRThread.
+                DQRThread client = new DQRThread(incomingClient, displayName);
+                client.start();
+                clientThreads.add(client);
             }
 
         } catch(IOException e) {
