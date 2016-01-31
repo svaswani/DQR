@@ -10,7 +10,15 @@ import UIKit
 
 class PlayerManager {
     
-    var playerList = [PlayerItem]()
+    var playerList = [
+        PlayerItem(name: "Stuart"),
+        PlayerItem(name: "Henry"),
+        PlayerItem(name: "Hudson"),
+        PlayerItem(name: "Sneha"),
+        PlayerItem(name: "Jackie"),
+        PlayerItem(name: "Nick"),
+        PlayerItem(name: "Blake")
+    ]
     var thisPlayer:PlayerItem? = nil
     
     func archivePath() -> String? {
