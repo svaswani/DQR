@@ -356,7 +356,6 @@
 				TargetAttributes = {
 					188DC67E1C5B119A00C6A6FF = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = E2E2UBMLGA;
 					};
 					188DC6921C5B119A00C6A6FF = {
 						CreatedOnToolsVersion = 7.2;
@@ -368,11 +367,11 @@
 					};
 					222174531C5DC3AC008014D1 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = E2E2UBMLGA;
+						DevelopmentTeam = 5WMSVF3JT7;
 					};
 					2221745F1C5DC3AC008014D1 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = E2E2UBMLGA;
+						DevelopmentTeam = 5WMSVF3JT7;
 					};
 				};
 			};
@@ -631,7 +630,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DQR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wbsllvn.DQR;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.DQR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -645,7 +644,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DQR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wbsllvn.DQR;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.DQR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -709,7 +708,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = DQRWatch_Extension;
 				INFOPLIST_FILE = DQRWatch/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.wbsllvn.DQR.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.DQR.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
@@ -729,7 +728,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = DQRWatch_Extension;
 				INFOPLIST_FILE = DQRWatch/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.wbsllvn.DQR.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.DQR.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
@@ -746,7 +745,7 @@
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "DQRWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wbsllvn.DQR.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.DQR.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
@@ -763,7 +762,7 @@
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "DQRWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wbsllvn.DQR.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.DQR.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
