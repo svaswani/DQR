@@ -12,6 +12,23 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var name: UITextField!
     
+    @IBOutlet weak var userNameInput: UITextField!
+    // join button code
+    @IBAction func didClickJoin(sender: AnyObject) {
+        if (!userNameInput.text!.isEmpty)
+        {
+            self.performSegueWithIdentifier("goToPlayers", sender: self)
+        }
+        else
+        {
+            let alert = UIAlertController(title: "Error!", message: "You did not enter a name", preferredStyle: UIAlertControllerStyle.Alert)
+            let alertAction = UIAlertAction(title: "OK!", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in }
+            alert.addAction(alertAction)
+            presentViewController(alert, animated: true) { () -> Void in }
+
+        }
+    }
+    
     @IBOutlet var coolView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
