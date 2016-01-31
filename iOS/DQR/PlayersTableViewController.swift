@@ -52,17 +52,19 @@ class PlayersTableViewController: UITableViewController {
         return cell
     }
     
-    @IBAction func unwindToList(segue: UIStoryboardSegue) {
-        if segue.identifier == "goToPlayers" {
-            let addVC = segue.sourceViewController as! LoginViewController
-            if let newPlayer = addVC.newPlayer {
-                myManager.thisPlayer = newPlayer
-                myManager.addToList(newPlayer)
-                let indexPath = NSIndexPath(forRow: myManager.playerList.count - 1, inSection: 0)
-                tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-            }
-        }
-    }
+//    @IBAction func unwindToList(segue: UIStoryboardSegue) {
+//        if segue.identifier == "goToPlayers" {
+//            print("Going to PlayersTableViewController")
+//            let addVC = segue.sourceViewController as! LoginViewController
+//            if let newPlayer = addVC.newPlayer {
+//                myManager.thisPlayer = newPlayer
+//                print("thisPlayer has changed")
+//                myManager.addToList(newPlayer)
+//                let indexPath = NSIndexPath(forRow: myManager.playerList.count - 1, inSection: 0)
+//                tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+//            }
+//        }
+//    }
     
 
     /*
