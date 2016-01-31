@@ -13,8 +13,14 @@ class PlayersTableViewController: UITableViewController {
     var players = [
         PlayerItem(name: "Stuart"),
         PlayerItem(name: "Henry"),
-        PlayerItem(name: "Darrin")
+        PlayerItem(name: "Hudson"),
+        PlayerItem(name: "Sneha"),
+        PlayerItem(name: "Jackie"),
+        PlayerItem(name: "Nick"),
+        PlayerItem(name: "Blake")
     ]
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +41,7 @@ class PlayersTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,15 +49,16 @@ class PlayersTableViewController: UITableViewController {
         return players.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
 
+        cell.textLabel!.text = players[indexPath.row].name
         // Configure the cell...
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
