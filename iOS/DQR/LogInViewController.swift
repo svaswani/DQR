@@ -12,6 +12,8 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var name: UITextField!
     
+    var newPlayer:PlayerItem?
+    
     @IBOutlet weak var userNameInput: UITextField!
     
     @IBOutlet weak var joinButton: UIButton!
@@ -20,6 +22,9 @@ class LoginViewController: UIViewController {
     @IBAction func didClickJoin(sender: AnyObject) {
         if (!userNameInput.text!.isEmpty)
         {
+            let name = userNameInput.text!
+            newPlayer = PlayerItem(name: name)
+            print(name)
             self.performSegueWithIdentifier("goToPlayers", sender: self)
         }
         else
