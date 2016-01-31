@@ -24,18 +24,17 @@ public class Server {
             //Continuously accept new incoming client requests and spin up new DQRThreads to handle them.
             Socket incomingClient;
             while(true) {
-                System.out.println("Waiting for clients to connect...");
+                Console.log_info("Waiting for clients to connect...");
                 incomingClient = serverSocket.accept();
                 String displayName = (!incomingClient.getInetAddress().getHostName().equals("")) ?
                         incomingClient.getInetAddress().getHostName() :
                         incomingClient.getInetAddress().getHostAddress();
-                System.out.println("Client " + displayName + " connected! Starting DQR Thread...");
+                Console.log_info("Client " + displayName + " connected! Starting DQR Thread...");
                 new DQRThread(incomingClient, displayName).start();
             }
 
         } catch(IOException e) {
-            e.printStackTrace();
-            System.err.println("DQR Server encountered an IO Error");
+            Console.log_error("FATAL: DQR Server encountered an IO error");
         }
     }
 }
