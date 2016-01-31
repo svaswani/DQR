@@ -39,5 +39,10 @@ public class Test {
         //Assign each player a target.
         model.generateTargets();
         Console.log_info("Assigned targets.");
+
+        //Test player targeting.
+        for(int i = 1; i < names.length; i++) {
+            model.notifyScanned(names[0], names[i]);
+        }
     }
 }

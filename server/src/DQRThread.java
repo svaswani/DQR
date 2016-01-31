@@ -32,6 +32,8 @@ public class DQRThread extends Thread {
             mInputStream = mClient.getInputStream();
             mOutputStream = mClient.getOutputStream();
             mBufferedReader = new BufferedReader(new InputStreamReader(mInputStream));
+
+            mOutputStream.write("Hello iOS from server.".getBytes());
         } catch(IOException e) {
             Console.log_error("A DQR Thread encountered an error.");
             interrupt();
@@ -55,9 +57,13 @@ public class DQRThread extends Thread {
                 String line;
                 while(mInputStream.available() > 0) {
                     line = mBufferedReader.readLine();
-                    Console.log_info("From " + mClientName + " read: " + line);
+                    Console.log_info("From \"" + mClientName + "\", read: " + line);
                     parseCommand(line);
                 }
+
+                //mOutputStream.write("Hello from server!".getBytes());
+                //Console.debug("Sending data to iOS");
+
             } catch(IOException e) {
                 Console.log_error("Problem reading from input stream of " + mClientName + ".");
             }
@@ -70,7 +76,7 @@ public class DQRThread extends Thread {
     public static final String COMMAND_GET_SCORE = "s";
     public static final String COMMAND_GET_TARGET = "t";
     public static final String COMMAND_LIST_PLAYERS = "l";
-    public static final String COMMAND_ATTACK = "n";
+    public static final String COMMAND_SCAN = "n";
 
     /**
      * Parses a command received from the input stream of the client and
@@ -109,7 +115,7 @@ public class DQRThread extends Thread {
 
                 //Check that the argument is not null.
                 if(argument == null || argument.equals("")) {
-                    Console.log_warning("Argument for add command cannot be null.");
+                    Console.log_warning("Argument for \"Add Player\" command cannot be null.");
                     return;
                 }
 
@@ -129,7 +135,7 @@ public class DQRThread extends Thread {
 
                 //Check that the argument is not null.
                 if(argument == null || argument.equals("")) {
-                    Console.log_warning("Argument for get score command cannot be null.");
+                    Console.log_warning("Argument for \"Get Score\" command cannot be null.");
                     return;
                 }
 
@@ -158,7 +164,7 @@ public class DQRThread extends Thread {
 
                 //Check that the argument is not null.
                 if(argument == null || argument.equals("")) {
-                    Console.log_warning("Argument for get target command cannot be null.");
+                    Console.log_warning("Argument for \"Get Target\" command cannot be null.");
                     return;
                 }
 
@@ -184,11 +190,15 @@ public class DQRThread extends Thread {
                 Console.log_warning("List command not implemented yet.");
                 break;
 
-            case COMMAND_ATTACK:
+            case COMMAND_SCAN:
 
                 Console.log_info("Received \"Player Attacked\" command from client \"" + mClientName + "\"");
 
-
+                //Check that the argument is not null.
+                if(argument == null || argument.equals("")) {
+                    Console.log_warning("Argument for \"Scan\" command cannot be null.");
+                    return;
+                }
 
                 break;
             default:
