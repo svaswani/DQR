@@ -30,6 +30,17 @@ class PlayerManager {
         return nil
     }
     
+    func thisPlayerIsNil() -> Bool {
+        return thisPlayer == nil
+    }
+    
+    func addToList(player: PlayerItem) {
+        if !thisPlayerIsNil() {
+            playerList += [player]
+            save()
+        }
+    }
+    
     //save all the current data
     func save() {
         if let theArchivePath = archivePath() {
