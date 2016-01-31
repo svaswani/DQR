@@ -145,10 +145,10 @@
             </objects>
             <point key="canvasLocation" x="1694" y="42"/>
         </scene>
-        <!--View Controller-->
+        <!--CameraQR View Controller-->
         <scene sceneID="9XE-cm-XeQ">
             <objects>
-                <viewController id="PiZ-jr-bV6" sceneMemberID="viewController">
+                <viewController id="PiZ-jr-bV6" customClass="CameraQRViewController" customModule="DQR" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sHP-YT-1Ed"/>
                         <viewControllerLayoutGuide type="bottom" id="u9z-HU-e7l"/>
