@@ -18,9 +18,7 @@ class LoginViewController: UIViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
         view.addGestureRecognizer(tap)
         
-        
-        
-
+        name.becomeFirstResponder()
         // Do any additional setup after loading the view.
     }
     
