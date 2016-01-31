@@ -1,5 +1,4 @@
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by Nick Mosher on 1/30/16.
@@ -15,17 +14,17 @@ public final class Model {
     /**
      * Use a set for players to avoid duplicates.
      */
-    private Set<Player> mPlayers;
+    private Map<String, Player> mPlayers;
 
     private Model() {
-        mPlayers = new HashSet<>();
+        mPlayers = new HashMap<>();
     }
 
     /**
      * Retrieve singleton instance.
      * @return The instance of the Model.
      */
-    private Model getModel() {
+    public static Model getModel() {
         if(MODEL == null) {
             MODEL = new Model();
         }
@@ -37,15 +36,26 @@ public final class Model {
      */
     public static final class Player {
 
-        public String mName;
-        public int mScore;
+        private String mName;
+        private int mScore;
+        private Player mTarget;
+
+        /**
+         * Private constructor to allow to reject construction.
+         * @param name The name of the player.
+         * @param initialScore The starting score of the player.
+         */
+        private Player(String name, int initialScore) {
+            mName = name;
+            mScore = initialScore;
+        }
 
         /**
          * Initialize a new player with 0 score.
          * @param name The name of the player.
          */
-        public Player(String name) {
-            this(name, 0);
+        public static Player makePlayer(String name) {
+            return makePlayer(name, 0);
         }
 
         /**
@@ -53,20 +63,88 @@ public final class Model {
          * @param name The name of the player.
          * @param initialScore The starting score of the player.
          */
-        public Player(String name, int initialScore) {
+        public static Player makePlayer(String name, int initialScore) {
 
             //Null safety check the name of the player.
             if(name == null || name.equals("")) {
-                throw new IllegalArgumentException("Player name cannot be null or blank.");
+                Console.log_error("Player name cannot be null or blank.");
+                return null;
             }
 
             //Null safety check the initial score.
             if(initialScore < 0) {
-                throw new IllegalArgumentException("Initial score cannot be less than 0.");
+                Console.log_error("Initial score cannot be less than 0.");
+                return null;
+            }
+
+            return new Player(name, initialScore);
+        }
+
+        /**
+         * Sets this player's name.
+         * @param name The name to set.
+         */
+        public void setName(String name) {
+
+            if(name == null || name.equals("")) {
+                Console.log_warning("Cannot set player's name; given name is null.");
+                return;
             }
 
             mName = name;
-            mScore = initialScore;
+        }
+
+        /**
+         * Returns the name of this player.
+         * @return The name of this player.
+         */
+        public String getName() {
+
+            return mName;
+        }
+
+        /**
+         * Sets the player's score.
+         * @param score The player's new score.
+         */
+        public void setScore(int score) {
+
+            mScore = score;
+        }
+
+        /**
+         * Returns the player's score.
+         * @return The player's score.
+         */
+        public int getScore() {
+
+            return mScore;
+        }
+
+        /**
+         * Sets a reference to this player's target player.
+         * @param target The target for this player.
+         * @return True if successful, false otherwise.
+         */
+        public boolean setTarget(Player target) {
+
+            if(target == null) {
+                Console.log_warning("Player to set target is null.");
+                return false;
+            }
+
+            mTarget = target;
+            Console.log_info("Player " + mName + " has target " + mTarget.mName + ".");
+            return true;
+        }
+
+        /**
+         * Returns this player's targeted player.
+         * @return The target of this player.
+         */
+        public Player getTarget() {
+
+            return mTarget;
         }
 
         /**
@@ -93,15 +171,125 @@ public final class Model {
      * @param player The player to add.
      * @return True if the player was successfully added, false otherwise.
      */
-    public boolean addPlayer(Player player) {
+    public synchronized boolean addPlayer(Player player) {
 
         //If the model already contains this player, refuse it.
-        if(mPlayers.contains(player)) {
-            System.err.println("Cannot add player \"" + player.mName + "\"; already exists!");
+        if(mPlayers.containsValue(player)) {
+            Console.log_warning("Cannot add player \"" + player.mName + "\"; already exists.");
             return false;
         }
 
-        mPlayers.add(player);
+        mPlayers.put(player.mName, player);
         return true;
+    }
+
+    /**
+     * Adds the given score to the named player. Fails if the player does not exist.
+     * @param name The name of the player to change score.
+     * @param score The score to add.
+     * @return True if the score was successfully changed, false otherwise.
+     */
+    public synchronized boolean addScore(String name, int score) {
+
+        //If the player does not exist, log warning and return failure.
+        if(!mPlayers.containsKey(name)) {
+            Console.log_warning("Player " + name + " does not exist.");
+            return false;
+        }
+
+        //If the score argument is less than or equal to 0, log warning and return failure.
+        if(score <= 0) {
+            Console.log_warning("Score to change cannot be 0 or less.");
+            return false;
+        }
+
+        mPlayers.get(name).mScore += score;
+        return true;
+    }
+
+    /**
+     * Subtracts the given score to the named player. Fails if the player does not exist.
+     * @param name The name of the player to change score.
+     * @param score The score to subtract.
+     * @return True if the score was successfully changed, false otherwise.
+     */
+    public synchronized boolean subtractScore(String name, int score) {
+
+        //If the player does not exist, log warning and return failure.
+        if(!mPlayers.containsKey(name)) {
+            Console.log_warning("Player " + name + " does not exist.");
+            return false;
+        }
+
+        //If the score argument is less than or equal to 0, log warning and return failure.
+        if(score <= 0) {
+            Console.log_warning("Score to change cannot be 0 or less.");
+            return false;
+        }
+
+        mPlayers.get(name).mScore -= score;
+        return true;
+    }
+
+    /**
+     * Returns the score of the named player. Fails if the player does not exist.
+     * @param name The name of the player to get score.
+     * @return The score of the player if present, -1 if the player does not exist.
+     */
+    public synchronized int getScore(String name) {
+
+        //If the player does not exist, log an error and return -1.
+        if(!mPlayers.containsKey(name)) {
+            Console.log_error("Player " + name + " does not exist.");
+            return -1;
+        }
+
+        return mPlayers.get(name).mScore;
+    }
+
+    /**
+     * Returns the target of the given player.
+     * @param name The name of the player to find the target of.
+     * @return The name of the given player's target.
+     */
+    public synchronized String getTarget(String name) {
+
+        if(!mPlayers.containsKey(name)) {
+            Console.log_error("Player " + name + " does not exist.");
+            return null;
+        }
+
+        return mPlayers.get(name).getTarget().getName();
+    }
+
+    /**
+     * Generates a random assignment of targets for each player.
+     */
+    public synchronized void generateTargets() {
+
+        //If there are too few players, log and quit.
+        if(mPlayers.size() < 3) {
+            Console.log_warning("There must be more than 2 players to generate a matchup.");
+            return;
+        }
+
+        //Create a list of the players and shuffle them to assign targets.
+        List<Player> shuffleList = new ArrayList<>();
+        for(Map.Entry<String, Player> e : mPlayers.entrySet()) {
+            shuffleList.add(e.getValue());
+        }
+        Collections.shuffle(shuffleList);
+
+        //Set each player's target to the next player.
+        Player next, prev;
+        for(int i = 1; i < shuffleList.size(); i++) {
+            (prev = shuffleList.get(i-1)).setTarget(next = shuffleList.get(i));
+            Console.debug("Player " + prev.mName + " targeting " + next.mName + ".");
+        }
+        //Set the last player's target to the first player.
+        (prev = shuffleList.get(shuffleList.size()-1)).setTarget(next = shuffleList.get(0));
+        Console.debug("Player " + prev.mName + " targeting " + next.mName + ".");
+
+        Console.log_info("Players shuffled and assigned targets.");
     }
 }
