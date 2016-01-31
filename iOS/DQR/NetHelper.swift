@@ -23,6 +23,7 @@ class NetHelper : NSObject, NSStreamDelegate {
         
         NSStream.getStreamsToHostWithName(server, port: port, inputStream: &inputStream, outputStream: &outputStream)
         inputStream!.delegate = self
+        print("Input stream set delegate to self")
         
         inputStream?.open()
         outputStream?.open()
@@ -46,13 +47,19 @@ class NetHelper : NSObject, NSStreamDelegate {
     
     func stream(aStream: NSStream, handleEvent eventCode: NSStreamEvent) {
         
+        print("Callback started")
+        
         // The input stream is the only stream we resistered as a delegate to, but this is a safety check.
         if aStream == inputStream {
+            
+            print("Callback is from inputStream")
             
             // Perform different actions based on the event code.
             switch eventCode {
                 
             case NSStreamEvent.HasBytesAvailable:
+                
+                print("NSStreamEvent has bytes available")
                 
                 // Create a buffer to store the read data into.
                 var buffer = [UInt8](count: 4096, repeatedValue: 0)
