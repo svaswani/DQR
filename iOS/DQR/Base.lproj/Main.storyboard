@@ -191,8 +191,19 @@
                     <view key="view" contentMode="scaleToFill" id="RrP-m5-m92">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="puB-Tm-Gfu">
+                                <rect key="frame" x="70" y="70" width="460" height="480"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="puB-Tm-Gfu" secondAttribute="trailing" constant="50" id="MOr-mg-sjL"/>
+                            <constraint firstItem="ngR-iI-Khc" firstAttribute="top" secondItem="puB-Tm-Gfu" secondAttribute="bottom" constant="50" id="VYH-lY-Aw7"/>
+                            <constraint firstItem="puB-Tm-Gfu" firstAttribute="top" secondItem="mgb-2e-Gxo" secondAttribute="bottom" constant="50" id="gFr-Ov-XX7"/>
+                            <constraint firstItem="puB-Tm-Gfu" firstAttribute="leading" secondItem="RrP-m5-m92" secondAttribute="leadingMargin" constant="50" id="rkH-CH-B9f"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="paf-dQ-ERu" appends="YES" id="Qbu-hW-HCH"/>
                         </connections>
