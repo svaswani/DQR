@@ -2,7 +2,7 @@
 //  NetHelper.swift
 //  QRCodeGen
 //
-//  Created by Apple on 1/30/16.
+//  Created by Nick Mosher on 1/30/16.
 //  Copyright © 2016 Nick. All rights reserved.
 //
 
@@ -28,7 +28,7 @@ class NetHelper : NSObject, NSStreamDelegate {
         outputStream?.open()
     }
     
-    class func getHelper() -> NetHelper {
+    class func getNetHelper() -> NetHelper {
         
         if singleton == nil {
             singleton = NetHelper()
@@ -39,8 +39,8 @@ class NetHelper : NSObject, NSStreamDelegate {
     
     func sendToServer(text: String) {
         
+        print("Sending \(text) to server.")
         let buffer: [UInt8] = Array(text.utf8)
-        
         outputStream?.write(buffer, maxLength: text.lengthOfBytesUsingEncoding(NSUTF8StringEncoding))
     }
     

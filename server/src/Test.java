@@ -24,11 +24,11 @@ public class Test {
 
         //Add some players to the model.
         for(String name : names) {
-            model.addPlayer(Model.Player.makePlayer(name));
+            model.addPlayer(name);
         }
 
         //Print a list of all of the players and ensure none failed to print.
-        String allPlayers = model.getPlayerNames();
+        String allPlayers = model.getFormattedPlayerNames();
         Console.log_info("List players: " + allPlayers);
         for(String name : names) {
             if(!allPlayers.contains(name)) {
