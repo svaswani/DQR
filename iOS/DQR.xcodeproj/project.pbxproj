@@ -29,6 +29,8 @@
 		2221746E1C5DC3AC008014D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2221746D1C5DC3AC008014D1 /* Assets.xcassets */; };
 		222174721C5DC3AC008014D1 /* DQRWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 222174541C5DC3AC008014D1 /* DQRWatch.app */; };
 		224E98A61C5DD36A00F05800 /* QRDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224E98A51C5DD36A00F05800 /* QRDisplayViewController.swift */; };
+		224E98A81C5DE34A00F05800 /* PlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224E98A71C5DE34A00F05800 /* PlayerManager.swift */; };
+		22CB36891C5E8B7B00FFE8DC /* QRShowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CB36881C5E8B7B00FFE8DC /* QRShowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +121,8 @@
 		2221746D1C5DC3AC008014D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2221746F1C5DC3AC008014D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		224E98A51C5DD36A00F05800 /* QRDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRDisplayViewController.swift; sourceTree = "<group>"; };
+		224E98A71C5DE34A00F05800 /* PlayerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerManager.swift; sourceTree = "<group>"; };
+		22CB36881C5E8B7B00FFE8DC /* QRShowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRShowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +195,7 @@
 				188DC68E1C5B119A00C6A6FF /* Info.plist */,
 				188DC6B01C5D99BB00C6A6FF /* PlayersTableViewController.swift */,
 				188DC6B21C5D9BEF00C6A6FF /* PlayerItem.swift */,
+				224E98A71C5DE34A00F05800 /* PlayerManager.swift */,
 				1801DC081C5DCEB50073D244 /* ServerViewController.swift */,
 				187B9A541C5E95280039941A /* GameHelper.swift */,
 			);
@@ -234,6 +239,7 @@
 				2221746D1C5DC3AC008014D1 /* Assets.xcassets */,
 				2221746F1C5DC3AC008014D1 /* Info.plist */,
 				222174651C5DC3AC008014D1 /* Supporting Files */,
+				22CB36881C5E8B7B00FFE8DC /* QRShowController.swift */,
 			);
 			path = "DQRWatch Extension";
 			sourceTree = "<group>";
@@ -350,7 +356,7 @@
 				TargetAttributes = {
 					188DC67E1C5B119A00C6A6FF = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 5WMSVF3JT7;
+						DevelopmentTeam = E2E2UBMLGA;
 					};
 					188DC6921C5B119A00C6A6FF = {
 						CreatedOnToolsVersion = 7.2;
@@ -362,11 +368,11 @@
 					};
 					222174531C5DC3AC008014D1 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 5WMSVF3JT7;
+						DevelopmentTeam = E2E2UBMLGA;
 					};
 					2221745F1C5DC3AC008014D1 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 5WMSVF3JT7;
+						DevelopmentTeam = E2E2UBMLGA;
 					};
 				};
 			};
@@ -446,6 +452,7 @@
 				188DC6831C5B119A00C6A6FF /* AppDelegate.swift in Sources */,
 				188DC6B11C5D99BB00C6A6FF /* PlayersTableViewController.swift in Sources */,
 				188DC6B91C5DA0E000C6A6FF /* LoginViewController.swift in Sources */,
+				224E98A81C5DE34A00F05800 /* PlayerManager.swift in Sources */,
 				187B9A551C5E95280039941A /* GameHelper.swift in Sources */,
 				1801DC091C5DCEB50073D244 /* ServerViewController.swift in Sources */,
 				188DC6B31C5D9BEF00C6A6FF /* PlayerItem.swift in Sources */,
@@ -474,6 +481,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2221746C1C5DC3AC008014D1 /* NotificationController.swift in Sources */,
+				22CB36891C5E8B7B00FFE8DC /* QRShowController.swift in Sources */,
 				2221746A1C5DC3AC008014D1 /* ExtensionDelegate.swift in Sources */,
 				222174681C5DC3AC008014D1 /* InterfaceController.swift in Sources */,
 			);
@@ -623,7 +631,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DQR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.DQR;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wbsllvn.DQR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -637,7 +645,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DQR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.DQR;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wbsllvn.DQR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -697,11 +705,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = DQRWatch_Extension;
 				INFOPLIST_FILE = DQRWatch/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.DQR.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wbsllvn.DQR.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -715,11 +725,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = DQRWatch_Extension;
 				INFOPLIST_FILE = DQRWatch/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.DQR.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wbsllvn.DQR.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -734,7 +746,7 @@
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "DQRWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.DQR.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wbsllvn.DQR.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
@@ -751,7 +763,7 @@
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "DQRWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.DQR.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wbsllvn.DQR.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
