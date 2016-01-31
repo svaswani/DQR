@@ -192,7 +192,7 @@
                                 <rect key="frame" x="277" y="251" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="buttonTop:" destination="RKZ-eK-xkX" eventType="touchUpInside" id="t4F-sH-73B"/>
+                                    <action selector="buttonTop:" destination="RKZ-eK-xkX" eventType="touchUpInside" id="pcS-pw-mrR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yme-AU-Kp6">
@@ -203,7 +203,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="buttonTop" destination="pSD-zA-1DN" id="WdK-iO-J3Z"/>
                         <outlet property="textField" destination="Kwk-cg-7QW" id="cfO-df-MSN"/>
                     </connections>
                 </viewController>

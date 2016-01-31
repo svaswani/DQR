@@ -14,7 +14,7 @@ class ServerViewController : UIViewController {
     
     @IBAction func buttonTop(sender: AnyObject) {
         
-        net.sendToServer("Hello from iOS!")
+        net.sendToServer("Hello from iOS!\n")
     }
     
     @IBOutlet weak var textField: UITextField!

@@ -360,7 +360,7 @@
 					};
 					2221745F1C5DC3AC008014D1 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 24SMWN75NS;
+						DevelopmentTeam = 5WMSVF3JT7;
 					};
 				};
 			};

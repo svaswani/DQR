@@ -23,6 +23,9 @@ class NetHelper : NSObject, NSStreamDelegate {
         
         NSStream.getStreamsToHostWithName(server, port: port, inputStream: &inputStream, outputStream: &outputStream)
         inputStream!.delegate = self
+        
+        inputStream?.open()
+        outputStream?.open()
     }
     
     class func getHelper() -> NetHelper {
