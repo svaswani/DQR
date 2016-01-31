@@ -14,6 +14,8 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var userNameInput: UITextField!
     
+    @IBOutlet weak var joinButton: UIButton!
+    
     // join button code
     @IBAction func didClickJoin(sender: AnyObject) {
         if (!userNameInput.text!.isEmpty)
@@ -38,6 +40,9 @@ class LoginViewController: UIViewController {
         
         name.becomeFirstResponder()
         // Do any additional setup after loading the view.
+        joinButton.layer.cornerRadius = 10
+        joinButton.clipsToBounds = true
+        
     }
     
     func DismissKeyboard(){
