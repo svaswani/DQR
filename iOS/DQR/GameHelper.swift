@@ -14,7 +14,7 @@ class GameHelper {
     static let COMMAND_GET_SCORE: String = "s:"
     static let COMMAND_GET_TARGET: String = "t:"
     static let COMMAND_LIST_PLAYERS: String = "l:"
-    static let COMMAND_NOTIFY_ATTACK: String = "n:"
+    static let COMMAND_NOTIFY_SCAN: String = "n:"
     
     /** 
      * Generates the command to register a player with the server.
@@ -28,7 +28,37 @@ class GameHelper {
         return COMMAND_ADD_PLAYER + playerName
     }
     
+    /**
+     * Generates the command to check a given player's score.
+     */
+    class func getScoreCheckCommand(playerName: String) -> String? {
+        
+        if playerName == "" {
+            print("Player name invalid")
+            return nil
+        }
+        return COMMAND_GET_SCORE + playerName
+    }
     
+    /**
+     * Generates the command to check a given player's target.
+     */
+    class func getTargetCheckCommand(playerName: String) -> String? {
+        
+        if playerName == "" {
+            print("Player name invalid")
+            return nil
+        }
+        return COMMAND_GET_TARGET + playerName
+    }
+    
+    /**
+     * Generates the command to request a list of all players.
+     */
+    class func getListCommand() -> String {
+        
+        return COMMAND_LIST_PLAYERS
+    }
     
     /**
      * Generates the command to notify the server that a player has been attacked.
@@ -53,6 +83,6 @@ class GameHelper {
             return nil;
         }
         
-        return COMMAND_NOTIFY_ATTACK + victim;
+        return COMMAND_NOTIFY_SCAN + victim;
     }
 }
