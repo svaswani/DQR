@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  DQR
 //
-//  Created by Apple on 1/28/16.
+//  Created by Nick Mosher on 1/28/16.
 //  Copyright © 2016 Team DQR. All rights reserved.
 //
 
@@ -91,5 +91,6 @@ class CameraQRViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
             }
         }
     }
+    
 }
 
