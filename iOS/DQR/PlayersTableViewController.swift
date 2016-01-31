@@ -10,17 +10,8 @@ import UIKit
 
 class PlayersTableViewController: UITableViewController {
     
-    var players = [
-        PlayerItem(name: "Stuart"),
-        PlayerItem(name: "Henry"),
-        PlayerItem(name: "Hudson"),
-        PlayerItem(name: "Sneha"),
-        PlayerItem(name: "Jackie"),
-        PlayerItem(name: "Nick"),
-        PlayerItem(name: "Blake")
-    ]
     
-    
+    let myManager = PlayerManager()
     
     
 
@@ -48,17 +39,29 @@ class PlayersTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return players.count
+        return myManager.playerList.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
 
-        cell.textLabel!.text = players[indexPath.row].name
+        cell.textLabel!.text = myManager.playerList[indexPath.row].name
         // Configure the cell...
 
         return cell
+    }
+    
+    @IBAction func unwindToList(segue: UIStoryboardSegue) {
+        if segue.identifier == "goToPlayers" {
+            let addVC = segue.sourceViewController as! LoginViewController
+            if let newPlayer = addVC.newPlayer {
+                myManager.thisPlayer = newPlayer
+                myManager.save()
+                let indexPath = NSIndexPath(forRow: myManager.playerList.count - 1, inSection: 0)
+                tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            }
+        }
     }
     
 
