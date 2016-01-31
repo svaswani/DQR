@@ -23,6 +23,7 @@ class NetHelper : NSObject, NSStreamDelegate {
         
         NSStream.getStreamsToHostWithName(server, port: port, inputStream: &inputStream, outputStream: &outputStream)
         
+	inputStream?.open()
         outputStream?.open()
     }
     
