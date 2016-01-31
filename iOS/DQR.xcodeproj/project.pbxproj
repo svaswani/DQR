@@ -18,6 +18,14 @@
 		188DC6B11C5D99BB00C6A6FF /* PlayersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188DC6B01C5D99BB00C6A6FF /* PlayersTableViewController.swift */; };
 		188DC6B31C5D9BEF00C6A6FF /* PlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188DC6B21C5D9BEF00C6A6FF /* PlayerItem.swift */; };
 		188DC6B91C5DA0E000C6A6FF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188DC6B81C5DA0E000C6A6FF /* LoginViewController.swift */; };
+		222174581C5DC3AC008014D1 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 222174561C5DC3AC008014D1 /* Interface.storyboard */; };
+		2221745A1C5DC3AC008014D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 222174591C5DC3AC008014D1 /* Assets.xcassets */; };
+		222174611C5DC3AC008014D1 /* DQRWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 222174601C5DC3AC008014D1 /* DQRWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		222174681C5DC3AC008014D1 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222174671C5DC3AC008014D1 /* InterfaceController.swift */; };
+		2221746A1C5DC3AC008014D1 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222174691C5DC3AC008014D1 /* ExtensionDelegate.swift */; };
+		2221746C1C5DC3AC008014D1 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2221746B1C5DC3AC008014D1 /* NotificationController.swift */; };
+		2221746E1C5DC3AC008014D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2221746D1C5DC3AC008014D1 /* Assets.xcassets */; };
+		222174721C5DC3AC008014D1 /* DQRWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 222174541C5DC3AC008014D1 /* DQRWatch.app */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +43,46 @@
 			remoteGlobalIDString = 188DC67E1C5B119A00C6A6FF;
 			remoteInfo = DQR;
 		};
+		222174621C5DC3AC008014D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 188DC6771C5B119A00C6A6FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2221745F1C5DC3AC008014D1;
+			remoteInfo = "DQRWatch Extension";
+		};
+		222174701C5DC3AC008014D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 188DC6771C5B119A00C6A6FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 222174531C5DC3AC008014D1;
+			remoteInfo = DQRWatch;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		222174781C5DC3AC008014D1 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				222174611C5DC3AC008014D1 /* DQRWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2221747A1C5DC3AC008014D1 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				222174721C5DC3AC008014D1 /* DQRWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		184276131C5DA4D7002902C5 /* NetHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetHelper.swift; sourceTree = "<group>"; };
@@ -55,6 +102,17 @@
 		188DC6B01C5D99BB00C6A6FF /* PlayersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersTableViewController.swift; sourceTree = "<group>"; };
 		188DC6B21C5D9BEF00C6A6FF /* PlayerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerItem.swift; sourceTree = "<group>"; };
 		188DC6B81C5DA0E000C6A6FF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		222174541C5DC3AC008014D1 /* DQRWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DQRWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		222174571C5DC3AC008014D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		222174591C5DC3AC008014D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2221745B1C5DC3AC008014D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		222174601C5DC3AC008014D1 /* DQRWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "DQRWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		222174661C5DC3AC008014D1 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		222174671C5DC3AC008014D1 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		222174691C5DC3AC008014D1 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		2221746B1C5DC3AC008014D1 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		2221746D1C5DC3AC008014D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2221746F1C5DC3AC008014D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +137,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2221745D1C5DC3AC008014D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -88,6 +153,8 @@
 				188DC6811C5B119A00C6A6FF /* DQR */,
 				188DC6961C5B119A00C6A6FF /* DQRTests */,
 				188DC6A11C5B119A00C6A6FF /* DQRUITests */,
+				222174551C5DC3AC008014D1 /* DQRWatch */,
+				222174641C5DC3AC008014D1 /* DQRWatch Extension */,
 				188DC6801C5B119A00C6A6FF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,6 +165,8 @@
 				188DC67F1C5B119A00C6A6FF /* DQR.app */,
 				188DC6931C5B119A00C6A6FF /* DQRTests.xctest */,
 				188DC69E1C5B119A00C6A6FF /* DQRUITests.xctest */,
+				222174541C5DC3AC008014D1 /* DQRWatch.app */,
+				222174601C5DC3AC008014D1 /* DQRWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -137,6 +206,37 @@
 			path = DQRUITests;
 			sourceTree = "<group>";
 		};
+		222174551C5DC3AC008014D1 /* DQRWatch */ = {
+			isa = PBXGroup;
+			children = (
+				222174561C5DC3AC008014D1 /* Interface.storyboard */,
+				222174591C5DC3AC008014D1 /* Assets.xcassets */,
+				2221745B1C5DC3AC008014D1 /* Info.plist */,
+			);
+			path = DQRWatch;
+			sourceTree = "<group>";
+		};
+		222174641C5DC3AC008014D1 /* DQRWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				222174671C5DC3AC008014D1 /* InterfaceController.swift */,
+				222174691C5DC3AC008014D1 /* ExtensionDelegate.swift */,
+				2221746B1C5DC3AC008014D1 /* NotificationController.swift */,
+				2221746D1C5DC3AC008014D1 /* Assets.xcassets */,
+				2221746F1C5DC3AC008014D1 /* Info.plist */,
+				222174651C5DC3AC008014D1 /* Supporting Files */,
+			);
+			path = "DQRWatch Extension";
+			sourceTree = "<group>";
+		};
+		222174651C5DC3AC008014D1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				222174661C5DC3AC008014D1 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,10 +247,12 @@
 				188DC67B1C5B119A00C6A6FF /* Sources */,
 				188DC67C1C5B119A00C6A6FF /* Frameworks */,
 				188DC67D1C5B119A00C6A6FF /* Resources */,
+				2221747A1C5DC3AC008014D1 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				222174711C5DC3AC008014D1 /* PBXTargetDependency */,
 			);
 			name = DQR;
 			productName = DQR;
@@ -193,6 +295,40 @@
 			productReference = 188DC69E1C5B119A00C6A6FF /* DQRUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		222174531C5DC3AC008014D1 /* DQRWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 222174791C5DC3AC008014D1 /* Build configuration list for PBXNativeTarget "DQRWatch" */;
+			buildPhases = (
+				222174521C5DC3AC008014D1 /* Resources */,
+				222174781C5DC3AC008014D1 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				222174631C5DC3AC008014D1 /* PBXTargetDependency */,
+			);
+			name = DQRWatch;
+			productName = DQRWatch;
+			productReference = 222174541C5DC3AC008014D1 /* DQRWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		2221745F1C5DC3AC008014D1 /* DQRWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 222174771C5DC3AC008014D1 /* Build configuration list for PBXNativeTarget "DQRWatch Extension" */;
+			buildPhases = (
+				2221745C1C5DC3AC008014D1 /* Sources */,
+				2221745D1C5DC3AC008014D1 /* Frameworks */,
+				2221745E1C5DC3AC008014D1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DQRWatch Extension";
+			productName = "DQRWatch Extension";
+			productReference = 222174601C5DC3AC008014D1 /* DQRWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -215,6 +351,14 @@
 						CreatedOnToolsVersion = 7.2;
 						TestTargetID = 188DC67E1C5B119A00C6A6FF;
 					};
+					222174531C5DC3AC008014D1 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 5WMSVF3JT7;
+					};
+					2221745F1C5DC3AC008014D1 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = E2E2UBMLGA;
+					};
 				};
 			};
 			buildConfigurationList = 188DC67A1C5B119A00C6A6FF /* Build configuration list for PBXProject "DQR" */;
@@ -233,6 +377,8 @@
 				188DC67E1C5B119A00C6A6FF /* DQR */,
 				188DC6921C5B119A00C6A6FF /* DQRTests */,
 				188DC69D1C5B119A00C6A6FF /* DQRUITests */,
+				222174531C5DC3AC008014D1 /* DQRWatch */,
+				2221745F1C5DC3AC008014D1 /* DQRWatch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -259,6 +405,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		222174521C5DC3AC008014D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2221745A1C5DC3AC008014D1 /* Assets.xcassets in Resources */,
+				222174581C5DC3AC008014D1 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2221745E1C5DC3AC008014D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2221746E1C5DC3AC008014D1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +457,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2221745C1C5DC3AC008014D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2221746C1C5DC3AC008014D1 /* NotificationController.swift in Sources */,
+				2221746A1C5DC3AC008014D1 /* ExtensionDelegate.swift in Sources */,
+				222174681C5DC3AC008014D1 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -306,6 +479,16 @@
 			isa = PBXTargetDependency;
 			target = 188DC67E1C5B119A00C6A6FF /* DQR */;
 			targetProxy = 188DC69F1C5B119A00C6A6FF /* PBXContainerItemProxy */;
+		};
+		222174631C5DC3AC008014D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2221745F1C5DC3AC008014D1 /* DQRWatch Extension */;
+			targetProxy = 222174621C5DC3AC008014D1 /* PBXContainerItemProxy */;
+		};
+		222174711C5DC3AC008014D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 222174531C5DC3AC008014D1 /* DQRWatch */;
+			targetProxy = 222174701C5DC3AC008014D1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -324,6 +507,14 @@
 				188DC68C1C5B119A00C6A6FF /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		222174561C5DC3AC008014D1 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				222174571C5DC3AC008014D1 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -488,6 +679,70 @@
 			};
 			name = Release;
 		};
+		222174731C5DC3AC008014D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = DQRWatch_Extension;
+				INFOPLIST_FILE = DQRWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.DQR.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		222174741C5DC3AC008014D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = DQRWatch_Extension;
+				INFOPLIST_FILE = DQRWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.DQR.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
+		222174751C5DC3AC008014D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "DQRWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.DQR.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		222174761C5DC3AC008014D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "DQRWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.DQR.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -526,6 +781,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		222174771C5DC3AC008014D1 /* Build configuration list for PBXNativeTarget "DQRWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				222174751C5DC3AC008014D1 /* Debug */,
+				222174761C5DC3AC008014D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		222174791C5DC3AC008014D1 /* Build configuration list for PBXNativeTarget "DQRWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				222174731C5DC3AC008014D1 /* Debug */,
+				222174741C5DC3AC008014D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
