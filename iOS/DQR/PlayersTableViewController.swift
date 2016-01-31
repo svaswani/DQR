@@ -57,7 +57,7 @@ class PlayersTableViewController: UITableViewController {
             let addVC = segue.sourceViewController as! LoginViewController
             if let newPlayer = addVC.newPlayer {
                 myManager.thisPlayer = newPlayer
-                myManager.save()
+                myManager.addToList(newPlayer)
                 let indexPath = NSIndexPath(forRow: myManager.playerList.count - 1, inSection: 0)
                 tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
             }
