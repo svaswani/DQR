@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Starscream
 
 let server = "129.21.104.129"
 let port = 4000
@@ -17,17 +16,12 @@ var outputStream: NSOutputStream?
 
 var singleton: NetHelper?
 
-var socket = WebSocket(url: NSURL(string: server)!)
-
-class NetHelper : NSObject, NSStreamDelegate, WebSocketDelegate {
+class NetHelper : NSObject, NSStreamDelegate {
     
     override init() {
         super.init()
         
         NSStream.getStreamsToHostWithName(server, port: port, inputStream: &inputStream, outputStream: &outputStream)
-        
-        socket.delegate = self as WebSocketDelegate
-        socket.connect()
         
         outputStream?.open()
     }
@@ -46,22 +40,6 @@ class NetHelper : NSObject, NSStreamDelegate, WebSocketDelegate {
         print("Sending \(text) to server.")
         let buffer: [UInt8] = Array(text.utf8)
         outputStream?.write(buffer, maxLength: text.lengthOfBytesUsingEncoding(NSUTF8StringEncoding))
-    }
-    
-    func websocketDidConnect(socket: WebSocket) {
-        print("Websocket is connected")
-    }
-    
-    func websocketDidDisconnect(socket: WebSocket, error: NSError?) {
-        print("Websocket is disconnected: \(error?.localizedDescription)")
-    }
-    
-    func websocketDidReceiveMessage(socket: WebSocket, text: String) {
-        print("Got some text: \(text)")
-    }
-    
-    func websocketDidReceiveData(socket: WebSocket, data: NSData) {
-        print("Got some data: \(data.length)")
     }
     
     func stream(aStream: NSStream, handleEvent eventCode: NSStreamEvent) {
