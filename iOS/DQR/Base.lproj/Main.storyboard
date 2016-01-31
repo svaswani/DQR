@@ -120,7 +120,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gfu-fJ-rTU" id="hGk-fg-iov">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -157,6 +157,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="fJe-ct-PDy" appends="YES" id="W33-8M-O02"/>
+                        </connections>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Camera" id="nFa-hW-JHV">
@@ -168,8 +172,40 @@
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O51-wM-iCp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="up" id="fJe-ct-PDy">
+                    <connections>
+                        <segue destination="iTf-Rq-5Y6" kind="presentation" id="hGP-TU-T6z"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2391" y="41"/>
+        </scene>
+        <!--Display View Controller-->
+        <scene sceneID="VTo-St-8Qr">
+            <objects>
+                <viewController id="iTf-Rq-5Y6" customClass="QRDisplayViewController" customModule="DQR" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mgb-2e-Gxo"/>
+                        <viewControllerLayoutGuide type="bottom" id="ngR-iI-Khc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RrP-m5-m92">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="paf-dQ-ERu" appends="YES" id="Qbu-hW-HCH"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6sw-Zw-4bp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="down" id="paf-dQ-ERu">
+                    <connections>
+                        <action selector="exitView:" destination="iTf-Rq-5Y6" id="RGc-vE-8FC"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2543" y="695"/>
         </scene>
         <!--Server View Controller-->
         <scene sceneID="8rh-iM-xZj">
