@@ -58,7 +58,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         qrCodeFrameView?.layer.borderColor = UIColor.greenColor().CGColor
         qrCodeFrameView?.layer.borderWidth = 2
         view.addSubview(qrCodeFrameView!)
-        view.bringSubviewToFront(qrCodeFrameView!)
+        //view.bringSubviewToFront(qrCodeFrameView!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -90,6 +90,22 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
                 // metadataObj.stringValue
             }
         }
+    }
+    
+    func generateQR(text: String) -> UIImage {
+        
+        // Convert string data into a form usable for QR generation.
+        let data = text.dataUsingEncoding(NSISOLatin1StringEncoding, allowLossyConversion: false)
+        
+        // Create a filter that will parse the text into a QR image.
+        let filter = CIFilter(name: "CIQRCodeGenerator")
+        
+        //Set filter properties to "tune" QR image.
+        filter!.setValue(data, forKey: "inputMessage")
+        filter!.setValue("Q", forKey: "inputCorrectionLabel")
+        
+        // Return the generated QR image.
+        return UIImage(CIImage: (filter?.outputImage)!)
     }
 }
 
