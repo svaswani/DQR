@@ -32,6 +32,9 @@ class PlayersTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        // Notify the server that we joined the game.
+        GameHelper.executeAddPlayerCommand((myManager.thisPlayer?.name)!)
     }
 
     override func didReceiveMemoryWarning() {
