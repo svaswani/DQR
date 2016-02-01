@@ -250,11 +250,13 @@
                     <navigationItem key="navigationItem" title="Camera" id="nFa-hW-JHV">
                         <rightBarButtonItems>
                             <barButtonItem title="Win" id="63K-jA-I53">
+                                <color key="tintColor" red="0.25098039220000001" green="0.031372549020000001" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="1iD-Kk-s9i" kind="show" id="734-n6-mSe"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Lose" id="O2t-V2-Ev9">
+                                <color key="tintColor" red="0.25098039220000001" green="0.031372549020000001" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="cB6-sg-gQw" kind="show" id="LRQ-kF-lYh"/>
                                 </connections>
