@@ -9,6 +9,13 @@
 import UIKit
 
 class QRDisplayViewController : UICollectionViewController {
+    @IBOutlet weak var QRImage: UIImageView!
+    
+    func updateImage() {
+        if thisPlayer != nil {
+            QRImage.image = thisPlayer?.qrImage
+        }
+    }
     
     var thisPlayer:PlayerItem?
 

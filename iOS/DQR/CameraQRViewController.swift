@@ -21,6 +21,7 @@ class CameraQRViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
             let qrVC = segue.destinationViewController as! QRDisplayViewController
             if let player = thisPlayer {
                 qrVC.thisPlayer = player
+                qrVC.updateImage()
             }
         }
     }
