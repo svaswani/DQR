@@ -8,7 +8,7 @@
 
 import Foundation
 
-let server = "129.21.104.129"
+let server = "starfighter.csh.rit.edu"
 let port = 4000
 
 var singleton: NetHelper?
