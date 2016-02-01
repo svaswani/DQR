@@ -10,6 +10,8 @@ import UIKit
 
 class PlayerManager {
     
+    
+    
     var playerList = [
         PlayerItem(name: "Stuart"),
         PlayerItem(name: "Henry"),
@@ -35,11 +37,8 @@ class PlayerManager {
     }
     
     func addToList(player: PlayerItem) {
-        print("Testing thisPlayer")
         if !thisPlayerIsNil() {
-            print("Adding new player.")
             playerList += [player]
-            save()
         }
     }
     

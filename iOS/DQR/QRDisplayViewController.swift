@@ -8,7 +8,9 @@
 
 import UIKit
 
-class QRDisplayViewController : UIViewController {
+class QRDisplayViewController : UICollectionViewController {
+    
+    var thisPlayer:PlayerItem?
 
     @IBAction func exitView(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)

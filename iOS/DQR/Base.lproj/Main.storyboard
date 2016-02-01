@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -222,7 +222,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gfu-fJ-rTU" id="hGk-fg-iov">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -237,7 +237,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Camera" id="T2k-xV-fUw">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="PiZ-jr-bV6" kind="show" id="tat-Jm-Fo1"/>
+                                <segue destination="PiZ-jr-bV6" kind="show" identifier="goToCamera" id="tat-Jm-Fo1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -276,7 +276,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O51-wM-iCp" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="up" id="fJe-ct-PDy">
                     <connections>
-                        <segue destination="iTf-Rq-5Y6" kind="presentation" id="hGP-TU-T6z"/>
+                        <segue destination="iTf-Rq-5Y6" kind="presentation" identifier="goToQR" id="hGP-TU-T6z"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -294,8 +294,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="puB-Tm-Gfu">
-                                <rect key="frame" x="50" y="50" width="500" height="500"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="puB-Tm-Gfu" customClass="QRImageView" customModule="DQR" customModuleProvider="target">
+                                <rect key="frame" x="50" y="44" width="500" height="500"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="puB-Tm-Gfu" secondAttribute="height" multiplier="1:1" id="Hvr-2P-9IY"/>
                                     <constraint firstAttribute="width" constant="200" id="JAA-qi-eNN"/>
@@ -328,7 +328,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2521" y="774"/>
+            <point key="canvasLocation" x="2434" y="820"/>
         </scene>
         <!--Server View Controller-->
         <scene sceneID="8rh-iM-xZj">
@@ -430,8 +430,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="VT0-ik-ry0"/>
                                 <exclude reference="3BD-lr-pCN"/>
+                                <exclude reference="VT0-ik-ry0"/>
                             </mask>
                         </variation>
                     </view>

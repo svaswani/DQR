@@ -14,6 +14,15 @@ class PlayersTableViewController: UITableViewController {
     let myManager = PlayerManager()
     
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "goToCamera" {
+            let cVC = segue.destinationViewController as! CameraQRViewController
+            if let player = myManager.thisPlayer {
+                cVC.thisPlayer = player
+            }
+        }
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
