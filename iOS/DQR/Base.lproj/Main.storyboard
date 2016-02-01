@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--DQR-->
@@ -227,21 +226,7 @@
                         </connections>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Camera" id="nFa-hW-JHV">
-                        <rightBarButtonItems>
-                            <barButtonItem title="Button 1" id="t2j-fh-Sk2"/>
-                            <barButtonItem title="Testing 2" id="n6y-ZT-GGm">
-                                <connections>
-                                    <segue destination="1iD-Kk-s9i" kind="show" id="FFX-PY-IrQ"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Testing" id="rn8-yO-zDs">
-                                <connections>
-                                    <segue destination="cB6-sg-gQw" kind="show" id="b5h-z5-LfH"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Camera" id="nFa-hW-JHV"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O51-wM-iCp" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="up" id="fJe-ct-PDy">
