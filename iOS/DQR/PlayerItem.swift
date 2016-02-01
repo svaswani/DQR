@@ -31,7 +31,9 @@ class PlayerItem: NSObject, NSCoding {
         
         //Set filter properties to "tune" QR image.
         filter!.setValue(data, forKey: "inputMessage")
-        filter!.setValue("Q", forKey: "inputCorrectionLevel")
+        filter!.setValue("M", forKey: "inputCorrectionLevel")
+        
+        
         
         // Return the generated QR image.
         return UIImage(CIImage: (filter?.outputImage)!)
