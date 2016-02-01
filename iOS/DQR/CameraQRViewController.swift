@@ -14,6 +14,17 @@ class CameraQRViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
     var captureSession: AVCaptureSession?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var qrCodeFrameView: UIView?
+    var thisPlayer:PlayerItem?
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "goToQR" {
+            let qrVC = segue.destinationViewController as! QRDisplayViewController
+            if let player = thisPlayer {
+                qrVC.thisPlayer = player
+                qrVC.updateImage()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,6 +99,7 @@ class CameraQRViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
                 
                 // DO SOMETHING WITH THE READ QR TEXT DATA HERE
                 // metadataObj.stringValue
+                print("Read QR: \(metadataObj.stringValue)")
             }
         }
     }

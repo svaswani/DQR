@@ -8,7 +8,11 @@
 
 import UIKit
 
+var playerManager: PlayerManager?
+
 class PlayerManager {
+    
+    
     
     var playerList = [
         PlayerItem(name: "Stuart"),
@@ -35,11 +39,8 @@ class PlayerManager {
     }
     
     func addToList(player: PlayerItem) {
-        print("Testing thisPlayer")
         if !thisPlayerIsNil() {
-            print("Adding new player.")
             playerList += [player]
-            save()
         }
     }
     
@@ -55,11 +56,18 @@ class PlayerManager {
     }
     
     //unarchive on startup of app
-    init() {
+    private init() {
         if let theArchivePath = archivePath() {
             if NSFileManager.defaultManager().fileExistsAtPath(theArchivePath) {
                 playerList = NSKeyedUnarchiver.unarchiveObjectWithFile(theArchivePath) as! [PlayerItem]
             }
         }
+    }
+    
+    func getPlayerManager() -> PlayerManager {
+        if(playerManager == nil) {
+            playerManager = PlayerManager()
+        }
+        return playerManager!
     }
 }
