@@ -37,6 +37,7 @@ class LoginViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print("In prepareForSegue")
         if segue.identifier == "goToPlayers" {
             let nVC = segue.destinationViewController as! UINavigationController
             let ptVC = nVC.viewControllers[0] as! PlayersTableViewController
@@ -45,6 +46,7 @@ class LoginViewController: UIViewController {
                 ptVC.myManager!.addToList(newPlayer)
             }
         }
+        print("Exiting prepareForSegue")
     }
     
     @IBOutlet var coolView: UIView!

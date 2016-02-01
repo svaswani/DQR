@@ -31,23 +31,10 @@ class PlayerItem: NSObject, NSCoding {
         
         //Set filter properties to "tune" QR image.
         filter!.setValue(data, forKey: "inputMessage")
-        filter!.setValue("Q", forKey: "inputCorrectionLevel")
+        filter!.setValue("H", forKey: "inputCorrectionLevel")
         
-        let outputImg:CIImage = filter!.outputImage!
-        
-        let context:CIContext = CIContext(options: nil)
-        let cgimg:CGImageRef = context.createCGImage(outputImg, fromRect: outputImg.extent)
-        
-        var img:UIImage = UIImage(CGImage: cgimg, scale: 1.0, orientation: UIImageOrientation.Up)
-        
-        let width  = img.size.width * 2
-        let height = img.size.height * 2
-        
-        UIGraphicsBeginImageContext(CGSizeMake(width, height))
-        img.drawInRect(CGRectMake(0, 0, width, height))
-        img = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return img
+        // Return the generated QR image.
+        return UIImage(CIImage: (filter?.outputImage)!)
     }
     
     let nameKey = "name"
