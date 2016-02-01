@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--DQR-->
@@ -226,7 +227,20 @@
                         </connections>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Camera" id="nFa-hW-JHV"/>
+                    <navigationItem key="navigationItem" title="Camera" id="nFa-hW-JHV">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Win" id="63K-jA-I53">
+                                <connections>
+                                    <segue destination="1iD-Kk-s9i" kind="show" id="734-n6-mSe"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Lose" id="O2t-V2-Ev9">
+                                <connections>
+                                    <segue destination="cB6-sg-gQw" kind="show" id="LRQ-kF-lYh"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O51-wM-iCp" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="up" id="fJe-ct-PDy">
@@ -249,7 +263,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="puB-Tm-Gfu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="puB-Tm-Gfu">
                                 <rect key="frame" x="70" y="170" width="460" height="460"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="puB-Tm-Gfu" secondAttribute="height" multiplier="1:1" id="Hvr-2P-9IY"/>
@@ -322,7 +336,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="yJ2-HT-S1f">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="yJ2-HT-S1f">
                                 <rect key="frame" x="70" y="64" width="460" height="460"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="yJ2-HT-S1f" secondAttribute="height" multiplier="1:1" id="RXf-ut-HsR"/>
@@ -336,7 +350,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Your assassin has killed you... Better luck next time" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2U-fA-Wlu">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Your assassin has killed you... Better luck next time" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2U-fA-Wlu">
                                 <rect key="frame" x="100" y="488" width="400" height="39"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>

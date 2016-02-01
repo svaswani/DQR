@@ -10,14 +10,12 @@ import UIKit
 
 class PlayerDead: UIViewController {
     
-    @IBOutlet weak var nextGameButton: UIButton!
-    
 //    @IBAction func didClickNewGame(sender: AnyObject) {
 //        self.performSegueWithIdentifier("goToNewGame", sender: self)
 //    }
     override func viewDidLoad() {
-        nextGameButton.layer.cornerRadius = 10
-        nextGameButton.clipsToBounds = true
+//        nextGameButton.layer.cornerRadius = 10
+//        nextGameButton.clipsToBounds = true
     }
 }
 
