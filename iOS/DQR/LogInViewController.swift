@@ -60,6 +60,7 @@ class LoginViewController: UIViewController {
         joinButton.layer.cornerRadius = 10
         joinButton.clipsToBounds = true
         
+        //NetHelper.getNetHelper()
     }
     
     func DismissKeyboard(){
