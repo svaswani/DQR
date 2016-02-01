@@ -18,14 +18,6 @@ class CameraQRViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
     
     var qrInputText: String = ""
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "goToQR" {
-            let qrVC = segue.destinationViewController as! QRDisplayViewController
-            if let player = thisPlayer {
-                qrVC.thisPlayer = player
-            }
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
