@@ -8,9 +8,22 @@
 
 import UIKit
 
-class QRDisplayViewController : UICollectionViewController {
+class QRDisplayViewController : UIViewController {
+    @IBOutlet weak var QRImage: UIImageView!
     
-    var thisPlayer:PlayerItem?
+    let myManager: PlayerManager? = PlayerManager.getPlayerManager()
+    
+    func updateImage() {
+        if myManager!.thisPlayer != nil {
+            QRImage.image = myManager!.thisPlayer?.qrImage
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        updateImage()
+    }
+    
 
     @IBAction func exitView(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)

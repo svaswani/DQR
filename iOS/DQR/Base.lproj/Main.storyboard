@@ -294,7 +294,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="puB-Tm-Gfu" customClass="QRImageView" customModule="DQR" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="puB-Tm-Gfu">
                                 <rect key="frame" x="50" y="44" width="500" height="500"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="puB-Tm-Gfu" secondAttribute="height" multiplier="1:1" id="Hvr-2P-9IY"/>
@@ -313,13 +313,16 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="puB-Tm-Gfu" firstAttribute="top" secondItem="mgb-2e-Gxo" secondAttribute="bottom" constant="150" id="8YJ-yL-fAW"/>
-                            <constraint firstItem="puB-Tm-Gfu" firstAttribute="leading" secondItem="RrP-m5-m92" secondAttribute="leadingMargin" constant="30" id="TUK-c9-uqr"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="puB-Tm-Gfu" secondAttribute="trailing" constant="30" id="dVl-h3-6oj"/>
+                            <constraint firstItem="puB-Tm-Gfu" firstAttribute="leading" secondItem="RrP-m5-m92" secondAttribute="leadingMargin" constant="50" id="TUK-c9-uqr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="puB-Tm-Gfu" secondAttribute="trailing" constant="50" id="dVl-h3-6oj"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="paf-dQ-ERu" appends="YES" id="Qbu-hW-HCH"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="QRImage" destination="puB-Tm-Gfu" id="hf5-as-KN8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6sw-Zw-4bp" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="down" id="paf-dQ-ERu">
@@ -328,7 +331,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2434" y="820"/>
+            <point key="canvasLocation" x="2391" y="799"/>
         </scene>
         <!--Server View Controller-->
         <scene sceneID="8rh-iM-xZj">

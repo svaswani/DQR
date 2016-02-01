@@ -8,9 +8,9 @@
 
 import UIKit
 
+var playerManager: PlayerManager?
+
 class PlayerManager {
-    
-    
     
     var playerList = [
         PlayerItem(name: "Stuart"),
@@ -54,11 +54,18 @@ class PlayerManager {
     }
     
     //unarchive on startup of app
-    init() {
+    private init() {
         if let theArchivePath = archivePath() {
             if NSFileManager.defaultManager().fileExistsAtPath(theArchivePath) {
                 playerList = NSKeyedUnarchiver.unarchiveObjectWithFile(theArchivePath) as! [PlayerItem]
             }
         }
+    }
+    
+    class func getPlayerManager() -> PlayerManager {
+        if playerManager == nil {
+            playerManager = PlayerManager()
+        }
+        return playerManager!
     }
 }

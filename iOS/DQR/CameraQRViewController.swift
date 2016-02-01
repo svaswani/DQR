@@ -16,14 +16,12 @@ class CameraQRViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
     var qrCodeFrameView: UIView?
     var thisPlayer:PlayerItem?
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "goToQR" {
-            let qrVC = segue.destinationViewController as! QRDisplayViewController
-            if let player = thisPlayer {
-                qrVC.thisPlayer = player
-            }
-        }
-    }
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if segue.identifier == "goToQR" {
+//            let qrVC = segue.destinationViewController as! QRDisplayViewController
+//            qrVC.
+//        }
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
