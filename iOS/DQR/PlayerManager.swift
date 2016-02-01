@@ -13,13 +13,9 @@ var playerManager: PlayerManager?
 class PlayerManager {
     
     var playerList = [
-        PlayerItem(name: "Stuart"),
-        PlayerItem(name: "Henry"),
-        PlayerItem(name: "Hudson"),
         PlayerItem(name: "Sneha"),
-        PlayerItem(name: "Jackie"),
-        PlayerItem(name: "Nick"),
-        PlayerItem(name: "Blake")
+        PlayerItem(name: "Blake"),
+        PlayerItem(name: "Nick")
     ]
     var thisPlayer:PlayerItem? = nil
     
