@@ -11,6 +11,7 @@ import AVFoundation
 
 class CameraQRViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
 
+    @IBOutlet weak var ScannedText: UILabel!
     var captureSession: AVCaptureSession?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var qrCodeFrameView: UIView?
@@ -63,6 +64,7 @@ class CameraQRViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
         qrCodeFrameView?.layer.borderWidth = 2
         view.addSubview(qrCodeFrameView!)
         view.bringSubviewToFront(qrCodeFrameView!)
+        view.bringSubviewToFront(ScannedText!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,6 +86,8 @@ class CameraQRViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
         
         if metadataObj.type == AVMetadataObjectTypeQRCode {
             
+            
+            
             // If the metadata object is a barcode object, parse the boudary and contained data.
             let barCodeObject = videoPreviewLayer?.transformedMetadataObjectForMetadataObject(metadataObj as AVMetadataMachineReadableCodeObject) as! AVMetadataMachineReadableCodeObject
             
@@ -92,7 +96,8 @@ class CameraQRViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
                 
                 // DO SOMETHING WITH THE READ QR TEXT DATA HERE
                 // metadataObj.stringValue
-                print("Read QR: \(metadataObj.stringValue)")
+                //print("Read QR: \(metadataObj.stringValue)")
+                ScannedText.text = metadataObj.stringValue
                 
                 // If the scanned image is a new code, execute the command to the server.
                 if metadataObj.stringValue != qrInputText {

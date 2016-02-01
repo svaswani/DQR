@@ -20,22 +20,7 @@ class PlayerItem: NSObject, NSCoding {
         self.scanned = false
     }
     
-    func playerScanned() -> Int {
-        if scanned {
-            switch(name) {
-                
-            case "Sneha":
-                return 5
-            case "Nick":
-                return 10
-            default:
-                return 5
-            }
-        }
-        else {
-            return 0
-        }
-    }
+
     
     // Generates a QR code from a string and returns a UIImage.
     class func generateQR(text: String) -> UIImage {
