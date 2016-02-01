@@ -34,7 +34,7 @@ class PlayersTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         // Notify the server that we joined the game.
-        GameHelper.executeAddPlayerCommand((myManager.thisPlayer?.name)!)
+        GameHelper.executeAddPlayerCommand((myManager!.thisPlayer?.name)!)
     }
 
     override func didReceiveMemoryWarning() {
