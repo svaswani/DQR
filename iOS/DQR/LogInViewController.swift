@@ -24,7 +24,6 @@ class LoginViewController: UIViewController {
         {
             let name = userNameInput.text!
             newPlayer = PlayerItem(name: name)
-            print(name)
             self.performSegueWithIdentifier("goToPlayers", sender: self)
         }
         else
@@ -34,6 +33,17 @@ class LoginViewController: UIViewController {
             alert.addAction(alertAction)
             presentViewController(alert, animated: true) { () -> Void in }
 
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "goToPlayers" {
+            let nVC = segue.destinationViewController as! UINavigationController
+            let ptVC = nVC.viewControllers[0] as! PlayersTableViewController
+            if let newPlayer = newPlayer {
+                ptVC.myManager.thisPlayer = newPlayer
+                ptVC.myManager.addToList(newPlayer)
+            }
         }
     }
     

@@ -37,8 +37,9 @@ public final class Model {
     public static final class Player {
 
         private String mName;
-        private int mScore;
         private Player mTarget;
+        private int mScore;
+        private boolean mAlive;
 
         /**
          * Private constructor to allow to reject construction.
@@ -48,6 +49,7 @@ public final class Model {
         private Player(String name, int initialScore) {
             mName = name;
             mScore = initialScore;
+            mAlive = true;
         }
 
         /**
@@ -134,7 +136,7 @@ public final class Model {
             }
 
             mTarget = target;
-            Console.log_info("Player " + mName + " assigned target " + mTarget.mName + ".");
+            Console.debug("Player " + mName + " assigned target " + mTarget.mName + ".");
             return true;
         }
 
@@ -266,6 +268,29 @@ public final class Model {
     }
 
     /**
+     * Sets the target of the attacking player to the given target player.
+     * @param attacker The attacking player.
+     * @param target The player for the attacker to target.
+     * @return True if successful, false otherwise.
+     */
+    private synchronized boolean setTarget(String attacker, String target) {
+
+        //Null safety check the attacker.
+        if(attacker == null || attacker.equals("")) {
+            Console.log_warning("Attacker is null or blank.");
+            return false;
+        }
+
+        //Null safety check the target.
+        if(target == null || target.equals("")) {
+            Console.log_warning("Target is null or blank.");
+            return false;
+        }
+
+        return mPlayers.get(attacker).setTarget(mPlayers.get(target));
+    }
+
+    /**
      * Returns a string array of player names.
      * @return A string array of player names.
      */
@@ -299,6 +324,57 @@ public final class Model {
         players += iterator.next().getValue().getName();
 
         return players;
+    }
+
+    /**
+     * Performs game logic for a scan event.
+     * @param playerScanning The player that completed a scan.
+     * @param playerScanned The player that got scanned.
+     */
+    public synchronized void notifyScanned(String playerScanning, String playerScanned) {
+
+        //Null safety check the scanning player.
+        if(playerScanning == null || playerScanning.equals("")) {
+            Console.log_warning("Scanning player is null or blank.");
+            return;
+        }
+
+        //Null safety check the scanned player.
+        if(playerScanned == null || playerScanned.equals("")) {
+            Console.log_warning("Scanned player is null or blank.");
+            return;
+        }
+
+        //Identify the target of the scanning player.
+        String scannerTarget = getTarget(playerScanning);
+        if(scannerTarget == null || scannerTarget.equals("")) {
+            Console.log_warning("Scanning player's target is null or blank.");
+            return;
+        }
+
+        //Check if the player that was scanned is the scanner's target.
+        if(scannerTarget.equals(playerScanned)) {
+
+            //Identify the old target of the victim (scanned) player.
+            String victimTarget = getTarget(playerScanned);
+            if(victimTarget == null || victimTarget.equals("")) {
+                Console.log_warning("Victim's target is null or blank.");
+                return;
+            }
+
+            //TODO assign the attacker bonus points for killing their target.
+
+            //Log game update.
+            Console.log_info("Player \"" + playerScanning + "\" has killed target \"" + playerScanned +
+                    "\" and is now targeting \"" + victimTarget + "\".");
+
+            //Assign the scanner (attacker) to the scanned player's old target.
+            setTarget(playerScanning, victimTarget);
+
+        } else {
+
+            //If the player scanned was not the scanner's target, the scanned player gains points.
+        }
     }
 
     /**
