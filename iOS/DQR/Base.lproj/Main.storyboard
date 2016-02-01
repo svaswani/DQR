@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--DQR-->
@@ -110,55 +111,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="272" y="44"/>
-        </scene>
-        <!--PlayerKilledViewController-->
-        <scene sceneID="mKi-56-LGt">
-            <objects>
-                <viewController title="PlayerKilledViewController" id="Lu7-xb-iXF" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3nn-fK-rar"/>
-                        <viewControllerLayoutGuide type="bottom" id="7l4-1X-vup"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="5EJ-iq-r9I">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Skv-lq-bDJ">
-                                <rect key="frame" x="70" y="20" width="460" height="460"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="041-YZ-r6w"/>
-                                    <constraint firstAttribute="height" constant="200" id="DyR-en-acI"/>
-                                    <constraint firstAttribute="width" secondItem="Skv-lq-bDJ" secondAttribute="height" multiplier="1:1" id="vsz-VA-KpY"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="041-YZ-r6w"/>
-                                        <exclude reference="DyR-en-acI"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Skv-lq-bDJ" secondAttribute="trailing" constant="150" id="24p-YR-gVn"/>
-                            <constraint firstItem="Skv-lq-bDJ" firstAttribute="leading" secondItem="5EJ-iq-r9I" secondAttribute="leadingMargin" constant="50" id="EEu-IO-3Ux"/>
-                            <constraint firstItem="Skv-lq-bDJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5EJ-iq-r9I" secondAttribute="leadingMargin" constant="50" id="KBf-Ji-Azo"/>
-                            <constraint firstItem="Skv-lq-bDJ" firstAttribute="top" secondItem="3nn-fK-rar" secondAttribute="bottom" id="RKV-5f-7J9"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Skv-lq-bDJ" secondAttribute="trailing" priority="250" constant="50" id="b2W-Vl-CnF"/>
-                            <constraint firstItem="Skv-lq-bDJ" firstAttribute="leading" secondItem="5EJ-iq-r9I" secondAttribute="leadingMargin" priority="250" constant="50" id="epg-Kz-LyU"/>
-                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Skv-lq-bDJ" secondAttribute="trailing" constant="50" id="kq3-3b-DXp"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="24p-YR-gVn"/>
-                                <exclude reference="EEu-IO-3Ux"/>
-                            </mask>
-                        </variation>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yxU-oX-Cus" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2040" y="-756"/>
         </scene>
         <!--LastPlayerAliveViewController-->
         <scene sceneID="58z-8M-sBg">
@@ -266,11 +218,18 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Camera" id="nFa-hW-JHV">
-                        <barButtonItem key="rightBarButtonItem" title="Button 1" id="t2j-fh-Sk2">
-                            <connections>
-                                <segue destination="RKZ-eK-xkX" kind="show" id="lfD-zh-1rI"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Button 1" id="t2j-fh-Sk2">
+                                <connections>
+                                    <segue destination="RKZ-eK-xkX" kind="show" id="lfD-zh-1rI"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Testing" id="rn8-yO-zDs">
+                                <connections>
+                                    <segue destination="cB6-sg-gQw" kind="show" id="i9K-WP-mLQ"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O51-wM-iCp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -294,8 +253,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="puB-Tm-Gfu">
-                                <rect key="frame" x="50" y="50" width="500" height="500"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="puB-Tm-Gfu">
+                                <rect key="frame" x="50" y="170" width="500" height="500"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="puB-Tm-Gfu" secondAttribute="height" multiplier="1:1" id="Hvr-2P-9IY"/>
                                     <constraint firstAttribute="width" constant="200" id="JAA-qi-eNN"/>
@@ -391,20 +350,20 @@
             </objects>
             <point key="canvasLocation" x="942" y="41"/>
         </scene>
-        <!--PlayerKilledViewController-->
+        <!--Game Over-->
         <scene sceneID="pmW-FP-TOp">
             <objects>
-                <viewController title="PlayerKilledViewController" id="cB6-sg-gQw" sceneMemberID="viewController">
+                <viewController title="Game Over" id="cB6-sg-gQw" customClass="PlayerDead" customModule="DQR" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eg6-U6-8Yh"/>
                         <viewControllerLayoutGuide type="bottom" id="n9M-8p-Nyf"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="4RZ-UU-f1g">
+                    <view key="view" contentMode="scaleToFill" id="4RZ-UU-f1g" customClass="PlayerKilled">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="yJ2-HT-S1f">
-                                <rect key="frame" x="70" y="20" width="460" height="460"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="yJ2-HT-S1f">
+                                <rect key="frame" x="70" y="64" width="460" height="460"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="yJ2-HT-S1f" secondAttribute="height" multiplier="1:1" id="RXf-ut-HsR"/>
                                     <constraint firstAttribute="width" constant="200" id="tra-pL-THP"/>
@@ -417,12 +376,41 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Your assassin has killed you... Better luck next time" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2U-fA-Wlu">
+                                <rect key="frame" x="101" y="488" width="400" height="39"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="mGD-RL-8T6"/>
+                                    <constraint firstAttribute="width" constant="400" id="v0e-Ba-e7b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCB-h7-eUg">
+                                <rect key="frame" x="201" y="550" width="200" height="30"/>
+                                <color key="backgroundColor" red="0.45098039220000002" green="0.054901960780000002" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="uUD-fr-1Iq"/>
+                                </constraints>
+                                <state key="normal" title="New Game">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didClickNewGame:" destination="cB6-sg-gQw" eventType="touchUpInside" id="m8X-l8-TPP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Z2U-fA-Wlu" firstAttribute="centerX" secondItem="yJ2-HT-S1f" secondAttribute="centerX" id="2XE-cE-qkK"/>
                             <constraint firstItem="yJ2-HT-S1f" firstAttribute="leading" secondItem="4RZ-UU-f1g" secondAttribute="leadingMargin" constant="50" id="3BD-lr-pCN"/>
+                            <constraint firstItem="Z2U-fA-Wlu" firstAttribute="leading" secondItem="4RZ-UU-f1g" secondAttribute="leadingMargin" constant="80" id="9bn-Ou-cZN"/>
+                            <constraint firstItem="Z2U-fA-Wlu" firstAttribute="centerX" secondItem="iCB-h7-eUg" secondAttribute="centerX" id="Pq6-lr-lBq"/>
+                            <constraint firstItem="Z2U-fA-Wlu" firstAttribute="top" secondItem="eg6-U6-8Yh" secondAttribute="bottom" constant="424" id="UU5-g8-ZJX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yJ2-HT-S1f" secondAttribute="trailing" constant="150" id="VT0-ik-ry0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Z2U-fA-Wlu" secondAttribute="trailing" constant="79" id="aOB-hA-0vp"/>
                             <constraint firstItem="yJ2-HT-S1f" firstAttribute="top" secondItem="eg6-U6-8Yh" secondAttribute="bottom" id="al8-ci-Aej"/>
+                            <constraint firstItem="iCB-h7-eUg" firstAttribute="top" secondItem="Z2U-fA-Wlu" secondAttribute="bottom" constant="23" id="cNQ-yf-mtM"/>
                             <constraint firstItem="yJ2-HT-S1f" firstAttribute="leading" secondItem="4RZ-UU-f1g" secondAttribute="leadingMargin" priority="250" constant="50" id="d9L-0K-pNG"/>
                             <constraint firstItem="yJ2-HT-S1f" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4RZ-UU-f1g" secondAttribute="leadingMargin" constant="50" id="iuf-sT-ne1"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="yJ2-HT-S1f" secondAttribute="trailing" constant="50" id="mqd-kr-SfI"/>
@@ -430,11 +418,16 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="VT0-ik-ry0"/>
                                 <exclude reference="3BD-lr-pCN"/>
+                                <exclude reference="VT0-ik-ry0"/>
+                                <exclude reference="9bn-Ou-cZN"/>
+                                <exclude reference="aOB-hA-0vp"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="nextGameButton" destination="iCB-h7-eUg" id="Mny-JP-aaV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W2z-HM-Sjq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
