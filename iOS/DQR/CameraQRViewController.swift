@@ -16,12 +16,16 @@ class CameraQRViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
     var qrCodeFrameView: UIView?
     var thisPlayer:PlayerItem?
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if segue.identifier == "goToQR" {
-//            let qrVC = segue.destinationViewController as! QRDisplayViewController
-//            qrVC.
-//        }
-//    }
+    var qrInputText: String = ""
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "goToQR" {
+            let qrVC = segue.destinationViewController as! QRDisplayViewController
+            if let player = thisPlayer {
+                qrVC.thisPlayer = player
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,6 +101,12 @@ class CameraQRViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
                 // DO SOMETHING WITH THE READ QR TEXT DATA HERE
                 // metadataObj.stringValue
                 print("Read QR: \(metadataObj.stringValue)")
+                
+                // If the scanned image is a new code, execute the command to the server.
+                if metadataObj.stringValue != qrInputText {
+                    qrInputText = metadataObj.stringValue
+                    GameHelper.executeScanCommand(qrInputText)
+                }
             }
         }
     }

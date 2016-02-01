@@ -1,3 +1,5 @@
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
+
 import java.io.*;
 import java.net.Socket;
 
@@ -39,6 +41,14 @@ public class DQRThread extends Thread {
             interrupt();
         }
 
+        //Register a listener to be called back when any player is killed.
+        Model.getModel().registerOnPlayerKilledListener(new Model.OnPlayerKilledListener() {
+            @Override
+            public void notifyPlayerKilled(String name) {
+
+            }
+        });
+
         Console.log_info("Successfully initialized DQR Thread.");
     }
 
@@ -50,7 +60,6 @@ public class DQRThread extends Thread {
 
         while(mClient.isConnected()) {
 
-            //System.out.println("DQR Client " + mClientName + " is still connected.");
             Console.debug("DQR Client " + mClientName + " is still connected.");
 
             try {
@@ -60,9 +69,6 @@ public class DQRThread extends Thread {
                     Console.log_info("From \"" + mClientName + "\", read: " + line);
                     parseCommand(line);
                 }
-
-                //mOutputStream.write("Hello from server!".getBytes());
-                //Console.debug("Sending data to iOS");
 
             } catch(IOException e) {
                 Console.log_error("Problem reading from input stream of " + mClientName + ".");
@@ -77,6 +83,7 @@ public class DQRThread extends Thread {
     public static final String COMMAND_GET_TARGET = "t";
     public static final String COMMAND_LIST_PLAYERS = "l";
     public static final String COMMAND_SCAN = "n";
+    public static final String COMMAND_PLAYER_KILLED = "k";
 
     /**
      * Parses a command received from the input stream of the client and
@@ -168,26 +175,11 @@ public class DQRThread extends Thread {
                     return;
                 }
 
-                //Retrieve the target from the model.
-                String target = Model.getModel().getTarget(argument);
-                if(target == null || target.equals("")) {
-                    Console.log_warning("Player " + argument + " does not exist or does not have a target.");
-                    return;
-                }
-
-                //Prepare the message to send to the client.
-                message = "t:" + target;
-
-                //Send the target to the client.
-                try {
-                    mOutputStream.write(message.getBytes());
-                } catch(IOException e) {
-                    Console.log_error("Failed to write data to " + mClientName + "'s output stream.");
-                    return;
-                }
+                sendTargetOf(argument);
 
             case COMMAND_LIST_PLAYERS:
-                Console.log_warning("List command not implemented yet.");
+
+                sendPlayerList();
                 break;
 
             case COMMAND_SCAN:
@@ -200,9 +192,70 @@ public class DQRThread extends Thread {
                     return;
                 }
 
+                //Check that the argument is delimited by a comma with two names.
+                String[] names = argument.split(",");
+                if(names.length != 2) {
+                    Console.log_warning("Argument for \"Scan\" command is improperly formatted.");
+                    return;
+                }
+
+                //Notify the model of the scan event.
+                Model.getModel().notifyScanned(names[0], names[1]);
+
                 break;
             default:
                 Console.log_warning("Command \"" + command + "\" received from client \"" + mClientName + "\" unrecognized.");
+        }
+    }
+
+    /**
+     * Sends a formatted string list of all players.
+     */
+    public void sendPlayerList() {
+        try {
+            String message = COMMAND_LIST_PLAYERS + ":" + Model.getModel().getFormattedPlayerNames();
+            mOutputStream.write(message.getBytes());
+        } catch(IOException e) {
+            Console.log_warning("Failed to send player list to client.");
+        }
+    }
+
+    /**
+     * Sends the target of the named player to the client.
+     * @param name The name of the player.
+     */
+    public void sendTargetOf(String name) {
+        try {
+            String message = COMMAND_GET_TARGET + ":" + Model.getModel().getTarget(name);
+            mOutputStream.write(message.getBytes());
+        } catch(IOException e) {
+            Console.log_warning("Failed to send player \"" + name + "\"'s target to client.");
+        }
+    }
+
+    /**
+     * Sends the score of the named player to the client.
+     * @param name The name of the player.
+     */
+    public void sendScoreOf(String name) {
+        try {
+            String message = COMMAND_GET_SCORE + ":" + Model.getModel().getScore(name);
+            mOutputStream.write(message.getBytes());
+        } catch(IOException e) {
+            Console.log_warning("Failed to send player \"" + name + "\"'s score to client.");
+        }
+    }
+
+    /**
+     * Notify the client whenever a player is killed.
+     * @param name The name of the killed player.
+     */
+    public void sendPlayerKilledNotification(String name) {
+        try {
+            String message = COMMAND_PLAYER_KILLED + ":" + name;
+            mOutputStream.write(message.getBytes());
+        } catch(IOException e) {
+            Console.log_warning("Failed to send kill notification of \"" + name + "\" to client.");
         }
     }
 }
