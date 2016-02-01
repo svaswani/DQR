@@ -272,15 +272,15 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="puB-Tm-Gfu" firstAttribute="top" secondItem="mgb-2e-Gxo" secondAttribute="bottom" constant="150" id="8YJ-yL-fAW"/>
-                            <constraint firstItem="puB-Tm-Gfu" firstAttribute="leading" secondItem="RrP-m5-m92" secondAttribute="leadingMargin" constant="30" id="TUK-c9-uqr"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="puB-Tm-Gfu" secondAttribute="trailing" constant="30" id="dVl-h3-6oj"/>
+                            <constraint firstItem="puB-Tm-Gfu" firstAttribute="leading" secondItem="RrP-m5-m92" secondAttribute="leadingMargin" constant="50" id="TUK-c9-uqr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="puB-Tm-Gfu" secondAttribute="trailing" constant="50" id="dVl-h3-6oj"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="paf-dQ-ERu" appends="YES" id="Qbu-hW-HCH"/>
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="QRImage" destination="puB-Tm-Gfu" id="eWQ-AH-M6S"/>
+                        <outlet property="QRImage" destination="puB-Tm-Gfu" id="hf5-as-KN8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6sw-Zw-4bp" userLabel="First Responder" sceneMemberID="firstResponder"/>

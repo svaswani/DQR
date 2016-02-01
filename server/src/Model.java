@@ -326,6 +326,17 @@ public final class Model {
         return players;
     }
 
+    //Define listener framework for notifying when a player is killed.
+    public interface OnPlayerKilledListener { void notifyPlayerKilled(String name); }
+    public Set<OnPlayerKilledListener> playerKilledListeners = new HashSet<>();
+    public void registerOnPlayerKilledListener(OnPlayerKilledListener listener) {
+        if(playerKilledListeners.contains(listener)) {
+            Console.log_warning("Tried to add duplicate OnPlayerKilledListener.");
+            return;
+        }
+        playerKilledListeners.add(listener);
+    }
+
     /**
      * Performs game logic for a scan event.
      * @param playerScanning The player that completed a scan.
@@ -363,6 +374,9 @@ public final class Model {
             }
 
             //TODO assign the attacker bonus points for killing their target.
+
+            //Notify everyone that a player was killed.
+            for(OnPlayerKilledListener listener : playerKilledListeners) listener.notifyPlayerKilled(playerScanned);
 
             //Log game update.
             Console.log_info("Player \"" + playerScanning + "\" has killed target \"" + playerScanned +
