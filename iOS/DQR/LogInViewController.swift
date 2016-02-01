@@ -43,7 +43,7 @@ class LoginViewController: UIViewController {
             let ptVC = nVC.viewControllers[0] as! PlayersTableViewController
             if let newPlayer = newPlayer {
                 ptVC.myManager!.thisPlayer = newPlayer
-                ptVC.myManager!.addToList(newPlayer)
+                //ptVC.myManager!.addToList(newPlayer)
             }
         }
         print("Exiting prepareForSegue")
