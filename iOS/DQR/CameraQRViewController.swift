@@ -97,7 +97,7 @@ class CameraQRViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
                 // If the scanned image is a new code, execute the command to the server.
                 if metadataObj.stringValue != qrInputText {
                     qrInputText = metadataObj.stringValue
-                    GameHelper.executeScanCommand(qrInputText)
+                    //GameHelper.executeScanCommand(qrInputText)
                 }
             }
         }
