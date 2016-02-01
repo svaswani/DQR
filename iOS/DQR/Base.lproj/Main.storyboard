@@ -267,7 +267,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="puB-Tm-Gfu" firstAttribute="top" secondItem="mgb-2e-Gxo" secondAttribute="bottom" constant="150" id="8YJ-yL-fAW"/>
+                            <constraint firstItem="puB-Tm-Gfu" firstAttribute="top" secondItem="mgb-2e-Gxo" secondAttribute="bottom" constant="200" id="8YJ-yL-fAW"/>
                             <constraint firstItem="puB-Tm-Gfu" firstAttribute="leading" secondItem="RrP-m5-m92" secondAttribute="leadingMargin" constant="50" id="TUK-c9-uqr"/>
                             <constraint firstAttribute="trailingMargin" secondItem="puB-Tm-Gfu" secondAttribute="trailing" constant="50" id="dVl-h3-6oj"/>
                         </constraints>
