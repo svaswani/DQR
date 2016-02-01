@@ -8,7 +8,8 @@
 
 import WatchKit
 import Foundation
+import WatchConnectivity
 
-class QRShowController : WKInterfaceController {
+class QRShowController : WKInterfaceController, WCSessionDelegate {
     
 }

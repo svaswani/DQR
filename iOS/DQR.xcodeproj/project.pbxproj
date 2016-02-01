@@ -31,6 +31,7 @@
 		224E98A61C5DD36A00F05800 /* QRDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224E98A51C5DD36A00F05800 /* QRDisplayViewController.swift */; };
 		224E98A81C5DE34A00F05800 /* PlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224E98A71C5DE34A00F05800 /* PlayerManager.swift */; };
 		22CB36891C5E8B7B00FFE8DC /* QRShowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CB36881C5E8B7B00FFE8DC /* QRShowController.swift */; };
+		22E9F0C11C5EDDC8002F0DE4 /* QRImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E9F0C01C5EDDC8002F0DE4 /* QRImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,7 @@
 		224E98A51C5DD36A00F05800 /* QRDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRDisplayViewController.swift; sourceTree = "<group>"; };
 		224E98A71C5DE34A00F05800 /* PlayerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerManager.swift; sourceTree = "<group>"; };
 		22CB36881C5E8B7B00FFE8DC /* QRShowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRShowController.swift; sourceTree = "<group>"; };
+		22E9F0C01C5EDDC8002F0DE4 /* QRImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,8 +191,8 @@
 				188DC6821C5B119A00C6A6FF /* AppDelegate.swift */,
 				188DC6841C5B119A00C6A6FF /* CameraQRViewController.swift */,
 				188DC6861C5B119A00C6A6FF /* Main.storyboard */,
-				224E98A51C5DD36A00F05800 /* QRDisplayViewController.swift */,
 				188DC6891C5B119A00C6A6FF /* Assets.xcassets */,
+				224E98A51C5DD36A00F05800 /* QRDisplayViewController.swift */,
 				188DC68B1C5B119A00C6A6FF /* LaunchScreen.storyboard */,
 				188DC68E1C5B119A00C6A6FF /* Info.plist */,
 				188DC6B01C5D99BB00C6A6FF /* PlayersTableViewController.swift */,
@@ -198,6 +200,7 @@
 				224E98A71C5DE34A00F05800 /* PlayerManager.swift */,
 				1801DC081C5DCEB50073D244 /* ServerViewController.swift */,
 				187B9A541C5E95280039941A /* GameHelper.swift */,
+				22E9F0C01C5EDDC8002F0DE4 /* QRImageView.swift */,
 			);
 			path = DQR;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				188DC6B11C5D99BB00C6A6FF /* PlayersTableViewController.swift in Sources */,
 				188DC6B91C5DA0E000C6A6FF /* LoginViewController.swift in Sources */,
 				224E98A81C5DE34A00F05800 /* PlayerManager.swift in Sources */,
+				22E9F0C11C5EDDC8002F0DE4 /* QRImageView.swift in Sources */,
 				187B9A551C5E95280039941A /* GameHelper.swift in Sources */,
 				1801DC091C5DCEB50073D244 /* ServerViewController.swift in Sources */,
 				188DC6B31C5D9BEF00C6A6FF /* PlayerItem.swift in Sources */,
