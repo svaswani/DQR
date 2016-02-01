@@ -11,13 +11,13 @@ import UIKit
 class PlayersTableViewController: UITableViewController {
     
     
-    let myManager = PlayerManager()
+    let myManager: PlayerManager? = PlayerManager.getPlayerManager()
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "goToCamera" {
             let cVC = segue.destinationViewController as! CameraQRViewController
-            if let player = myManager.thisPlayer {
+            if let player = myManager!.thisPlayer {
                 cVC.thisPlayer = player
             }
         }
@@ -48,14 +48,14 @@ class PlayersTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return myManager.playerList.count
+        return myManager!.playerList.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
 
-        cell.textLabel!.text = myManager.playerList[indexPath.row].name
+        cell.textLabel!.text = myManager!.playerList[indexPath.row].name
         // Configure the cell...
 
         return cell

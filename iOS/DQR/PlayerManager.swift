@@ -12,8 +12,6 @@ var playerManager: PlayerManager?
 
 class PlayerManager {
     
-    
-    
     var playerList = [
         PlayerItem(name: "Stuart"),
         PlayerItem(name: "Henry"),
@@ -64,8 +62,8 @@ class PlayerManager {
         }
     }
     
-    func getPlayerManager() -> PlayerManager {
-        if(playerManager == nil) {
+    class func getPlayerManager() -> PlayerManager {
+        if playerManager == nil {
             playerManager = PlayerManager()
         }
         return playerManager!

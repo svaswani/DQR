@@ -41,8 +41,8 @@ class LoginViewController: UIViewController {
             let nVC = segue.destinationViewController as! UINavigationController
             let ptVC = nVC.viewControllers[0] as! PlayersTableViewController
             if let newPlayer = newPlayer {
-                ptVC.myManager.thisPlayer = newPlayer
-                ptVC.myManager.addToList(newPlayer)
+                ptVC.myManager!.thisPlayer = newPlayer
+                ptVC.myManager!.addToList(newPlayer)
             }
         }
     }
