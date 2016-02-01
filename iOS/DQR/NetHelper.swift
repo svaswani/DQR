@@ -35,6 +35,9 @@ var outputStream: NSOutputStream?
                 
                 let responseString = NSString(bytes: inputBuffer, length: inputBuffer.count, encoding: NSUTF8StringEncoding) as! String
                 print("Read data from stream: \(responseString)")
+                
+                //Notify the game manager of the server response.
+                GameHelper.onServerCommandReceived(responseString)
             }
         }
     }
