@@ -247,10 +247,6 @@
                         </connections>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Camera" id="nFa-hW-JHV"/>
-                    <connections>
-                        <outlet property="ScannedText" destination="b7q-3U-mrI" id="G10-3y-cwF"/>
-                    </connections>
                     <navigationItem key="navigationItem" title="Camera" id="nFa-hW-JHV">
                         <rightBarButtonItems>
                             <barButtonItem title="Win" id="63K-jA-I53">
